@@ -1,33 +1,23 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  lang:
+    en: "English"
+    vi: "Vietnamse"
+  base_title: "Memorial Garden"
+  home:
+    title: "Home"
+    welcome: "Welcome to the Memorial Garden"
+    tribute: "Let's pay a tribute for a loved one."
+    signup: "Sign up for create memorials"
+  about:
+    title: "About"
+    content: "This website was build to be a place where people could create an online memorial to collect and share memories of the people they have lost. Hopefully, it will ease the nostalgia and give the feeling that they still exist. Quote from the special girl, i knew:"
+    quote: "Well, Greg, I think that it just means that even after somebody dies, you can... you can still keep learning about them, you know, their life. It can keep unfolding itself to you just as long... just as long as you pay attention to it."
+    author: "-Jesse Andrews, Me and Earl and the Dying Girl"
+  contact:
+    title: "Contact"
+    head: "Contact Us"
+    content: "For any of your contributions,don't hesitate please contact us via email: memorialgarden@gmail.com. We will respond you soon."
+  login:
+    title: "Login"
+  memorial:
+    title: "Memorials"
