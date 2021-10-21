@@ -21,3 +21,30 @@ vi:
     title: "Đăng nhập"
   memorial:
     title: "Tưởng nhớ"
+  signup:
+    title: "Đăng ký"
+  activerecord:
+    models:
+      user: "tài khoản"
+    attributes:
+      user:
+        name: "Tên"
+        email: "Thư điện tử"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận lại mật khẩu"
+  form:
+    error: "Biểu mẫu chứa %{count} lỗi."
+    signup: "Tạo tại khoản"
+  errors:
+    messages:
+      blank: "không được để trống hoặc chỉ chứa dấu cách nha."
+      invalid: "không hợp lệ nha."
+      too_short: "đặt quá ngắn nha."
+      too_long: "đặt quá dài nha."
+      confirmation: "không giống với mật khẩu ở trên nha."
+  flash:
+    signup:
+      failed: "Đăng ký chưa thành công, sửa lại form theo hướng dẫn giúp mình nhé!"
+      successed: "Chào mừng tân binh hen ~~"
+    show:
+      failed: "User không tồn tại, bạn có thể đăng ký tại đây"
