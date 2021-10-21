@@ -2,7 +2,9 @@ class Memorial < ApplicationRecord
   ATR_PERMIT = %i(name gender cause_of_death relationship avatar).freeze
 
   scope :by_name_asc, ->{order :name}
-  scope :search_by_name, ->(q){where "name LIKE ?", "%#{q}%" if q.present?}
+  scope :search_by_name, (lambda do |name|
+    where "name LIKE ?", "%#{name}%" if name.present?
+  end)
   scope :find_user, ->(user){where user_id: user.id if user.present?}
 
   belongs_to :user
