@@ -15,7 +15,7 @@
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
     </div>
-    <%= render "layouts/cover" if yield(:title).eql? t("home.title") %>
+      <%= render "layouts/cover" %>
     <div class="container">
       <%= yield %>
       <%= render "layouts/footer" %>

@@ -1,0 +1,19 @@
+<div class="create-banner create-image1">
+</div>
+<div class="container">
+  <div class="create-memorial">
+    <div class="top-block">
+      <h1 class="form-title">
+        <%= t("memorial.create.title") %></h1>
+      <h3 class="title-help-text">
+        <%= t("memorial.create.logan") %>
+      </h3>
+    </div>
+    <%= form_with url: new_memorial_path, method: :get do |f| %>
+      <%= f.label t("memorial.create.share"), class: "name-label" %>
+      <%= f.text_field :name, class: "name-input",
+                       placeholder: t("memorial.create.name") %>
+      <%= f.submit t("memorial.create.button"), class: "name-button" %>
+    <% end %>
+  </div>
+</div>

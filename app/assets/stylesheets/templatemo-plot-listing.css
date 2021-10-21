@@ -68,7 +68,7 @@
   max-width: 27px;
 }
 
-.title{
+.title {
   color: #c7c5c8;
   margin-bottom: 30px;
   font-size: 300%;
@@ -80,28 +80,27 @@
   font-size: 170%;
 }
 
-.black{
+.black {
   background-color: #2a2727;
 }
 
-
-.quoteText{
+.quoteText {
   color: #c7c5c8;
   text-indent: 250px;
-  font-family:"Merriweather", "Georgia", serif;
+  font-family: "Merriweather", "Georgia", serif;
   font-size: 130%;
-  padding:0px 5px 10px 0px;
-  line-height:21px
+  padding: 0px 5px 10px 0px;
+  line-height: 21px
 }
 
-.authorOrTitle{
+.authorOrTitle {
   color: #c7c5c8;
   float: right;
-  font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
-  font-weight:bold
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: bold
 }
 
-.indent{
+.indent {
   text-indent: 50px;
   color: #c7c5c8;
   margin-bottom: 30px;
@@ -109,14 +108,163 @@
 }
 
 label {
-    color: white;
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700;
+  color: white;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .gravatar {
   width: 80px;
   height: 80px;
+}
+
+.create-memorial {
+  background: #cccccc;
+  margin-top: 20px;
+  border: 1px solid #c39c65;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color: #1b4046;
+  padding: 48px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.form-title {
+  color: #1b4046;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2em;
+  margin: 4px 0 18px;
+  text-align: center;
+}
+
+.title-help-text {
+  color: #63787b;
+  font-size: 20px;
+  letter-spacing: .1px;
+  line-height: 140%;
+  margin: 0;
+  text-transform: uppercase
+}
+
+.name-input {
+  width: 30%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.name-label {
+  color: #63787b;
+  font-size: 20px;
+  letter-spacing: .1px;
+  line-height: 140%;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.name-button {
+  width: 41%;
+  color: black;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.create-banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 191px 0px 0px 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.create-image1 {
+  background-image: url(cover.webp);
+}
+
+.create-image2 {
+  background-image: url(nicola-fioravanti.jpg);
+}
+
+.create-image3 {
+  background-image: url(tina-witherspoon.jpg);
+}
+
+.create-image4 {
+  background-image: url(wave_candle.jpg);
+}
+
+header{
+  bottom: 899px;
+}
+
+.datetime select:nth-child(1){
+  width: 70px;
+  text-indent: 15px;
+}
+
+.datetime select:nth-child(2){
+  width: 70px;
+  text-indent: 15px;
+}
+
+.datetime select:nth-child(3) {
+  width: 70px;
+  text-indent: 5px;
+}
+
+.datetime select:nth-child(4) {
+  width: 70px;
+  text-indent: 15px;
+}
+.datetime lable:nth-child(5){
+  width: 20px;
+  text-indent: 15px;
+}
+
+.datetime input:nth-child(6){
+  width: 200px;
+  text-indent: 15px;
+}
+
+#q{
+  margin-left: 20px;
+}
+
+h{
+  margin-top: 3px;
 }

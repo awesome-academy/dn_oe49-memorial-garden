@@ -1,0 +1,6 @@
+<% provide(:url, user_memorials_path) %>
+<%= render "shared/search_form" %>
+<ol class="microposts">
+  <%= render @memorials %>
+</ol>
+<%= paginate @memorials %>

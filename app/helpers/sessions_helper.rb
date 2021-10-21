@@ -1,4 +1,12 @@
 module SessionsHelper
+  def logged_in_user
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t("flash.login.warning_user")
+    redirect_to login_url
+  end
+
   def log_in user
     session[:user_id] = user.id
   end

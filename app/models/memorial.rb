@@ -1,4 +1,8 @@
 class Memorial < ApplicationRecord
+  ATR_PERMIT = %i(name gender cause_of_death relationship avatar).freeze
+  scope :alphabet, ->{order name: :asc}
+  scope :search, ->(q){where "name LIKE ?", "%#{q}%" if q}
+
   belongs_to :user
   has_many :placetimes, dependent: :destroy
   has_many :contributions, dependent: :destroy
@@ -9,4 +13,12 @@ class Memorial < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.length.digit_50}
   validates :relationship, presence: true
+
+  def birth_date
+    placetimes.select(&:is_born?).pop.date
+  end
+
+  def death_date
+    placetimes.reject(&:is_born?).pop.date
+  end
 end
