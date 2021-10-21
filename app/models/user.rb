@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  ATR_PERMIT = %i(name email password password_confirmation).freeze
+
   private
 
   def downcase_email

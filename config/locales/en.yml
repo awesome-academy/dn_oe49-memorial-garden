@@ -3,6 +3,10 @@ en:
     en: "English"
     vi: "Vietnamse"
   base_title: "Memorial Garden"
+  header:
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Log out"
   home:
     title: "Home"
     welcome: "Welcome to the Memorial Garden"
@@ -19,13 +23,14 @@ en:
     content: "For any of your contributions,don't hesitate please contact us via email: memorialgarden@gmail.com. We will respond you soon."
   login:
     title: "Login"
+    signup: "Sign up now!"
   memorial:
     title: "Memorials"
   signup:
     title: "Sign up"
   activerecord:
     models:
-      user: "account"
+      user: "Account"
   form:
     error: {
       one: "The form contains %{count} error.",
@@ -38,3 +43,9 @@ en:
       successed: "Welcome to the Memorial Garden!"
     show:
       failed: "User's not exist, you can sign up here."
+    login:
+      failed: "Invalid email/password combination"
+      successed: "Log in successed"
+      invalid_email: "Email's not exist"
+      invalid_password: "Wrong password"
+    logout: "Log out successed"

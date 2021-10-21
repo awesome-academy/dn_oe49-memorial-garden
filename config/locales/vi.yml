@@ -3,6 +3,10 @@ vi:
     en: "Tiếng Anh"
     vi: "Tiếng Việt"
   base_title: "Khu Vườn Ký Ức"
+  header:
+    profile: "Trang cá nhân"
+    settings: "Tùy chọn"
+    logout: "Thoát"
   home:
     title: "Trang chủ"
     welcome: "Khu vườn diệu kỳ nơi về những ký ức trân quý"
@@ -19,13 +23,14 @@ vi:
     content: "Nếu bạn muốn đóng góp ý kiến,đừng ngần ngại liên hệ qua hòm thư: memorialgarden@gmail.com. Chúng tôi sẽ phản hồi sớm nhất có thể."
   login:
     title: "Đăng nhập"
+    signup: "Đăng ký ngay!"
   memorial:
     title: "Tưởng nhớ"
   signup:
     title: "Đăng ký"
   activerecord:
     models:
-      user: "tài khoản"
+      user: "Tài khoản"
     attributes:
       user:
         name: "Tên"
@@ -48,3 +53,8 @@ vi:
       successed: "Chào mừng tân binh hen ~~"
     show:
       failed: "User không tồn tại, bạn có thể đăng ký tại đây"
+    login:
+      successed: "Đăng nhập thành công"
+      invalid_email: "Thư điện tử không tồn tại"
+      invalid_password: "Sai mật khẩu"
+    logout: "Đăng xuất thành công"
