@@ -25,12 +25,34 @@ en:
     title: "Login"
     signup: "Sign up now!"
   memorial:
-    title: "Memorials"
+    title: "My Memorials"
+    hall: "Soul land"
+    create:
+      title: "Create a Memorial"
+      logan: "PRESERVE AND SHARE MEMORIES OF YOUR LOVED ONE"
+      share: "I WANT TO SHARE MEMORIES OF"
+      name: "Their name"
+      button: "Continue"
+      successed: "Memorial's created"
+      failed: "Memorial's not created"
+    new:
+      button: "Create a Memorial"
+  placetime:
+    die_on: "Die on"
+    born_on: "Born on"
+    at: ".At"
+    day: "Day"
+    month: "Month"
+    year: "Year"
   signup:
     title: "Sign up"
   activerecord:
     models:
       user: "Account"
+      memorial: "Memorial"
+    attributes:
+      memorial:
+        cause_of_death: "Passed away by"
   form:
     error: {
       one: "The form contains %{count} error.",
@@ -70,3 +92,6 @@ en:
   delete:
     title: "Delete Account"
     confirm: "Are you sure?"
+  search:
+    title: "Search"
+    inf: "Type here"

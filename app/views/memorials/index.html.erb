@@ -1,0 +1,6 @@
+<% provide :title, t("memorial.title") %>
+<h1><%= t("memorial.title") %></h1>
+<ol class="memorials">
+  <%= render @memorials %>
+</ol>
+<%= paginate @memorials %>
