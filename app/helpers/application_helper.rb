@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def avatar_for user
-    return image_tag user.avatar if User.first.avatar.attached?
+    return image_tag(user.avatar, class: "gravatar") if user.avatar.attached?
 
     image_tag("avatar-none.jpg", class: "gravatar")
   end

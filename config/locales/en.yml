@@ -40,7 +40,7 @@ en:
   flash:
     signup:
       failed: "Sign Up Failed"
-      successed: "Welcome to the Memorial Garden!"
+      successed: "Welcome to the Sample App!"
     show:
       failed: "User's not exist, you can sign up here."
     login:
@@ -48,4 +48,25 @@ en:
       successed: "Log in successed"
       invalid_email: "Email's not exist"
       invalid_password: "Wrong password"
+      warning_user: "Please log in"
+      warning_admin: "You must be admin to do this action"
     logout: "Log out successed"
+    update:
+      successed: "Profile updated"
+      failed: "Updating profile failed"
+    delete:
+      successed: "User's deleted"
+      failed: "Unsuccessfull deletion"
+    edit:
+      wrong_user: "You can't do this action"
+  edit:
+    title: "Edit user"
+    head: "Update your profile"
+    button: "Save changes"
+  avatar:
+    change: "Change"
+  index:
+    title: "All users"
+  delete:
+    title: "Delete Account"
+    confirm: "Are you sure?"

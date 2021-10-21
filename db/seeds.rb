@@ -3,4 +3,9 @@ User.create!(name: "Thanh Le",
              email: "thanh.lq011299@gmail.com",
              password: "foobar",
              password_confirmation: "foobar",
-             role: 1)
+             admin: 1)
+User.create!(name: "Hai",
+             gender: 1,
+             email: "hai@gmail.com",
+             password: "foobar",
+             password_confirmation: "foobar",)

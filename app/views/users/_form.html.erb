@@ -1,9 +1,19 @@
 <%= form_for(@user) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
+  <%= f.label User.human_attribute_name(:avatar) %>
+  <div class="gravatar_edit">
+    <%= avatar_for @user %>
+  </div>
+  <span class="image">
+    <%= f.file_field :avatar %>
+  </span>
   <%= f.label User.human_attribute_name(:name) %>
   <%= f.text_field :name, class: "form-control" %>
   <%= f.label User.human_attribute_name(:email) %>
   <%= f.email_field :email, class: "form-control" %>
+  <%= f.label User.human_attribute_name(:gender) %>
+  <%= f.select :gender, options_for_select([[t("female"), 0],
+    [t("male"), 1]], @user.gender) %>
   <%= f.label User.human_attribute_name(:password) %>
   <%= f.password_field :password, class: "form-control" %>
   <%= f.label User.human_attribute_name(:password_confirmation) %>

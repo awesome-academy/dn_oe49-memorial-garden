@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  ATR_PERMIT = %i(name email password password_confirmation).freeze
+  ATR_PERMIT = %i(name email password password_confirmation
+                  gender avatar).freeze
   has_many :memorials, dependent: :destroy
   has_many :contributions, dependent: :destroy
   has_many :memorial_relations, class_name: AccessPrivacy.name,
@@ -17,8 +18,6 @@ class User < ApplicationRecord
             length: {minimum: Settings.length.digit_6}
 
   has_secure_password
-
-  ATR_PERMIT = %i(name email password password_confirmation).freeze
 
   private
 

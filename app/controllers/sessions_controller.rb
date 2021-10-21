@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user.authenticate(params[:session][:password])
       flash[:success] = t("flash.login.successed")
       log_in @user
-      redirect_to @user
+      redirect_back_or @user
     else
       flash.now[:danger] = t("flash.login.invalid_password")
       render :new

@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
     t.integer "gender"
     t.string "email", null: false
     t.string "avatar"
-    t.integer "role", default: 0, null: false
+    t.integer "admin", default: 0, null: false
     t.string "password_digest", null: false
     t.string "activate_digest"
     t.string "reset_digest"
