@@ -21,3 +21,20 @@ en:
     title: "Login"
   memorial:
     title: "Memorials"
+  signup:
+    title: "Sign up"
+  activerecord:
+    models:
+      user: "account"
+  form:
+    error: {
+      one: "The form contains %{count} error.",
+      other: "The form contains %{count} errors."
+    }
+    signup: "Create my account"
+  flash:
+    signup:
+      failed: "Sign Up Failed"
+      successed: "Welcome to the Memorial Garden!"
+    show:
+      failed: "User's not exist, you can sign up here."
