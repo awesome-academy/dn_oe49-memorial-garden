@@ -10,11 +10,13 @@
   </head>
   <body class="black">
     <%= render "layouts/header" %>
-    <%= render "layouts/cover" if yield(:title).eql? t("home.title") %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
+    </div>
+    <%= render "layouts/cover" if yield(:title).eql? t("home.title") %>
+    <div class="container">
       <%= yield %>
       <%= render "layouts/footer" %>
     </div>
