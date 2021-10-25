@@ -1,4 +1,6 @@
 vi:
+  female: "Nữ"
+  male: "Nam"
   lang:
     en: "Tiếng Anh"
     vi: "Tiếng Việt"
@@ -37,6 +39,8 @@ vi:
         email: "Thư điện tử"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận lại mật khẩu"
+        avatar: "Ảnh đại diện"
+        gender: "Giới tính"
   form:
     error: "Biểu mẫu chứa %{count} lỗi."
     signup: "Tạo tại khoản"
@@ -54,7 +58,29 @@ vi:
     show:
       failed: "User không tồn tại, bạn có thể đăng ký tại đây"
     login:
+      failed: "Lỗi thư điện tử/mật khẩu hoặc cả 2 đều chưa đúng"
       successed: "Đăng nhập thành công"
       invalid_email: "Thư điện tử không tồn tại"
       invalid_password: "Sai mật khẩu"
+      warning_user: "Vui lòng đăng nhập"
+      warning_admin: "Bạn phải là admin để thực hiện chức năng này"
     logout: "Đăng xuất thành công"
+    update:
+      successed: "Cập nhật thành công"
+      failed: "Cập nhật thất bại"
+    delete:
+      successed: "Tài khoản đã được xóa"
+      failed: "Xóa không thành công"
+    edit:
+      wrong_user: "Bạn không có quyền truy cập chức năng này"
+  edit:
+    title: "Chỉnh sửa thông tin"
+    head: "Cập nhật thông tin cá nhân"
+    button: "Lưu thay đổi"
+  avatar:
+    change: "Thay đổi"
+  index:
+    title: "Thành viên"
+  delete:
+    title: "Xóa tài khoản"
+    confirm: "Bạn chắc chứ?"
