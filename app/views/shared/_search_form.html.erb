@@ -1,0 +1,18 @@
+<div id="landing-search-input">
+    <div class="row">
+           <%= form_with url: yield(:url), local: true, method: :get,
+                         html: { class: "form-inline" } do |form| %>
+              <div class="row form-group">
+                <div class="col-sm-8">
+                  <%= form.text_field :q, value: params[:q],
+                    placeholder: t("search.inf"), size: 40, data:
+                      {behavior: "autocomplete"}, class: "form-control" %>
+                </div>
+                <div class="col-sm-4">
+                  <%= form.button t("search.title"),
+                    class: "btn btn-outline-success form-control" %>
+                </div>
+              </div>
+           <% end %>
+    </div>
+</div>

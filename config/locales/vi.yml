@@ -27,12 +27,31 @@ vi:
     title: "Đăng nhập"
     signup: "Đăng ký ngay!"
   memorial:
-    title: "Tưởng nhớ"
+    title: "Hồi ức của tôi"
+    hall: "Vùng đất linh hồn"
+    create:
+      title: "Tạo tưởng nhớ"
+      logan: "Để gìn giữ và lan tỏa những ký ức quý báu về người thân yêu"
+      share: "Tôi muốn chia sẻ ký ức của:"
+      name: "Tên của họ"
+      button: "Tiếp tục"
+      successed: "Tạo tưởng niệm thành công"
+      failed: "Tạo tưởng niệm thất bại"
+    new:
+      button: "Tạo Tưởng Nhớ"
+  placetime:
+    die_on: "Mất ngày:"
+    born_on: "Sinh ngày:"
+    at: ".Tại"
+    day: "Ngày"
+    month: "Tháng"
+    year: "Năm"
   signup:
     title: "Đăng ký"
   activerecord:
     models:
       user: "Tài khoản"
+      memorial: "Tưởng niệm"
     attributes:
       user:
         name: "Tên"
@@ -41,16 +60,30 @@ vi:
         password_confirmation: "Xác nhận lại mật khẩu"
         avatar: "Ảnh đại diện"
         gender: "Giới tính"
+      memorial:
+        name: "Tên của họ"
+        avatar: "Ảnh"
+        gender: "Giới tính"
+        cause_of_death: "Qua đời bởi"
+        relationship: "Họ là gì của bạn"
+    errors:
+      models:
+        user:
+          blank: "không được để trống hoặc chỉ chứa dấu cách nha."
+          invalid: "không hợp lệ nha."
+          too_short: "đặt quá ngắn nha."
+          too_long: "đặt quá dài nha."
+          confirmation: "không giống với mật khẩu ở trên nha."
+        memorial:
+          attributes:
+            name:
+              blank: "chưa được điền."
+            relationship:
+              blank: "nào ?"
   form:
     error: "Biểu mẫu chứa %{count} lỗi."
     signup: "Tạo tại khoản"
-  errors:
-    messages:
-      blank: "không được để trống hoặc chỉ chứa dấu cách nha."
-      invalid: "không hợp lệ nha."
-      too_short: "đặt quá ngắn nha."
-      too_long: "đặt quá dài nha."
-      confirmation: "không giống với mật khẩu ở trên nha."
+
   flash:
     signup:
       failed: "Đăng ký chưa thành công, sửa lại form theo hướng dẫn giúp mình nhé!"
@@ -84,3 +117,13 @@ vi:
   delete:
     title: "Xóa tài khoản"
     confirm: "Bạn chắc chứ?"
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Trước đó"
+      next: "Tiếp theo &rsaquo;"
+      truncate: "&hellip;"
+  search:
+    title: "Tìm kiếm"
+    inf: "Gõ vào đây"
