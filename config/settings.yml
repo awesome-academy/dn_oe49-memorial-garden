@@ -5,3 +5,7 @@ length:
   digit_200: 200
   digit_1000: 1000
 email_regrex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+per_page:
+  digit_10: 10
+  digit_5: 5
+date_format: "%d-%m-%Y"

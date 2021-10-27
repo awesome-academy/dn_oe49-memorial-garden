@@ -3,7 +3,10 @@ Rails.application.routes.draw do
     root "static_pages#home"
     get "/about", to: "static_pages#about"
     get "/contact", to: "static_pages#contact"
-    resources :users, except: :index
+    resources :users, except: %i(index destroy) do
+      resources :memorials, only: :index
+    end
+    get "memorials", to: "memorials#index"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
