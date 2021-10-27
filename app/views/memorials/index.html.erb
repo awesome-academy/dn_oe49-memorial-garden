@@ -1,5 +1,6 @@
-<% provide :title, t("memorial.title") %>
-<h1><%= t("memorial.title") %></h1>
+<% provide :title, @title %>
+<h1><%= @title %></h1>
+<%= render "shared/search_form" %>
 <ol class="memorials">
   <%= render @memorials %>
 </ol>
