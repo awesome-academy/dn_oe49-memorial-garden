@@ -18,11 +18,27 @@ class Memorial < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.length.digit_50}
   validates :relationship, presence: true
 
-  def birth_date
-    placetimes.select(&:is_born?).pop.date
+  def placetimes_attributes= placetimes_attributes
+    placetimes_attributes.each do |num, params|
+      is_born = num.eql?("0")
+      date = format_date params
+      placetimes.build(location: params[:location],
+        date: date, is_born: is_born)
+    end
   end
 
-  def death_date
-    placetimes.reject(&:is_born?).pop.date
+  def format_date name
+    form_array = %w(1 2 3).map{|e| name["date(#{e}i)"].to_i}
+    return if form_array.include? 0
+
+    Date.new(*form_array)
+  end
+
+  def build_placetimes
+    2.times{placetimes.build}
+  end
+
+  def date type
+    placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?).pop.date
   end
 end

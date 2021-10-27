@@ -1,0 +1,30 @@
+<%= form_with model: @memorial, url: memorials_path do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label Memorial.human_attribute_name(:avatar) %>
+  <div class="gravatar_edit">
+    <%= avatar_for @memorial %>
+  </div>
+  <span class="image">
+    <%= f.file_field :avatar %>
+  </span>
+  <%= f.label Memorial.human_attribute_name(:name) %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label Memorial.human_attribute_name(:gender) %>
+  <%= f.select :gender, options_for_select([[t("female"), 0],
+    [t("male"), 1]], @memorial.gender) %>
+  <%= f.label Memorial.human_attribute_name(:cause_of_death) %>
+  <%= f.text_field :cause_of_death, class: "form-control" %>
+  <%= f.label Memorial.human_attribute_name(:relationship) %>
+  <%= f.text_field :relationship, class: "form-control" %>
+  <%= f.fields_for :placetimes do |death| %>
+     <span class="datetime">
+      <label> <%= t "placetime.die_on" %> </label>
+      <%= death.date_select "date",prompt: {day: t("day"),month: t("month"),
+        year: t("year")}, :start_year => 1900, :end_year => Time.now.year %>
+      <label> <%= t "placetime.at" %> </label>
+      <%= death.text_field "location" %>
+      <% death.object.is_born = false %>
+    </span>
+  <% end %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

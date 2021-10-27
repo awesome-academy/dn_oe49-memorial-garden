@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      default: "%Y-%m-%d"
   lang:
     en: "English"
     vi: "Vietnamse"

@@ -13,4 +13,11 @@ module ApplicationHelper
 
     image_tag("avatar-none.jpg", class: "gravatar")
   end
+
+  def show_date_of model, type
+    full_detail_date = model.send(:date, type)
+    return "?" if full_detail_date.blank?
+
+    l full_detail_date, format: :default
+  end
 end

@@ -3,7 +3,7 @@ user = User.create!(name: "Thanh Le",
              email: "thanh.lq011299@gmail.com",
              password: "123456",
              password_confirmation: "123456",
-             role: 1)
+             admin: 1)
 10.times do |n|
   memorial_name = Faker::Name.name
   relationship = Faker::Relationship.familial

@@ -6,11 +6,11 @@
         <%= memorial.name %>
        <span>
         <%= t("placetime.born_on") %>
-        <%= memorial.birth_date.strftime(Settings.date_format) %>
+        <%= show_date_of memorial, :birth %>
        </span>
        <span>
         <%= t("placetime.die_on") %>
-        <%= memorial.death_date.strftime(Settings.date_format) %>
+        <%= show_date_of memorial, :death %>
        </span>
       </h1>
     </section>
