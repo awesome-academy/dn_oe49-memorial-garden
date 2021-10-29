@@ -1,5 +1,5 @@
 <% if yield(:title).eql? t("home.title") %>
-  <%= render "layouts/signup" %>
+  <%= render (logged_in? ? "layouts/create" : "layouts/signup") %>
 <% else %>
   <%= content_tag(:div, "", class: yield(:cover)) %>
 <% end %>

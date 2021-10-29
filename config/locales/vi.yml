@@ -1,4 +1,10 @@
 vi:
+  time:
+    formats:
+      default: "%d-%m-%Y"
+  day: "Ngày"
+  month: "Tháng"
+  year: "Năm"
   female: "Nữ"
   male: "Nam"
   lang:
@@ -43,9 +49,6 @@ vi:
     die_on: "Mất ngày:"
     born_on: "Sinh ngày:"
     at: ".Tại"
-    day: "Ngày"
-    month: "Tháng"
-    year: "Năm"
   signup:
     title: "Đăng ký"
   activerecord:
