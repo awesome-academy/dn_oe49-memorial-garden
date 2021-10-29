@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users, except: %i(index destroy) do
       resources :memorials, only: :index
     end
-    resources :memorials, only: %i(new create)
+    resources :memorials, only: %i(show new create)
     get "memorials", to: "memorials#index"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"

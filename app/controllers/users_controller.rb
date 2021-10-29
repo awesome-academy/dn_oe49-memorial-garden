@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return if @user
 
-    flash[:danger] = t("flash.show.failed")
+    flash[:danger] = t("flash.show.user.failed")
     redirect_to new_user_path
   end
 

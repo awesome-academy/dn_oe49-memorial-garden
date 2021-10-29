@@ -41,4 +41,9 @@ class Memorial < ApplicationRecord
   def date type
     placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?).pop.date
   end
+
+  def place type
+    placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?)
+              .pop.location
+  end
 end

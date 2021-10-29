@@ -28,6 +28,7 @@ en:
     title: "Login"
     signup: "Sign up now!"
   memorial:
+    profile: "Memories of "
     title: "My Memorials"
     hall: "Soul land"
     create:
@@ -40,6 +41,8 @@ en:
       failed: "Memorial's not created"
     new:
       button: "Create a Memorial"
+    show:
+      about: "About"
   placetime:
     die_on: "Die on"
     born_on: "Born on"
@@ -67,7 +70,12 @@ en:
       failed: "Sign Up Failed"
       successed: "Welcome to the Sample App!"
     show:
-      failed: "User's not exist, you can sign up here."
+      user:
+        failed: "User's not exist, you can sign up here."
+      memorial:
+        failed: "Memorial's not exist"
+
+
     login:
       failed: "Invalid email/password combination"
       successed: "Log in successed"
