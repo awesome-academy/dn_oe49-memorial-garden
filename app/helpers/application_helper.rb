@@ -20,4 +20,11 @@ module ApplicationHelper
 
     l full_detail_date, format: :default
   end
+
+  def birth_and_death_year model
+    i = locale.eql?(:vi) ? 2 : 0
+    birth_year = show_date_of(model, :birth).split("-")[i]
+    death_year = show_date_of(model, :death).split("-")[i]
+    "#{birth_year}-#{death_year}"
+  end
 end

@@ -3,7 +3,7 @@
     <section class="user_info">
       <h1>
         <%= avatar_for memorial %>
-        <%= memorial.name %>
+        <%= link_to memorial.name, memorial %>
        <span>
         <%= t("placetime.born_on") %>
         <%= show_date_of memorial, :birth %>

@@ -33,6 +33,7 @@ vi:
     title: "Đăng nhập"
     signup: "Đăng ký ngay!"
   memorial:
+    profile: "Lưu niệm về "
     title: "Hồi ức của tôi"
     hall: "Vùng đất linh hồn"
     create:
@@ -45,6 +46,8 @@ vi:
       failed: "Tạo tưởng niệm thất bại"
     new:
       button: "Tạo Tưởng Nhớ"
+    show:
+      about: "Cuộc đời"
   placetime:
     die_on: "Mất ngày:"
     born_on: "Sinh ngày:"
@@ -92,7 +95,10 @@ vi:
       failed: "Đăng ký chưa thành công, sửa lại form theo hướng dẫn giúp mình nhé!"
       successed: "Chào mừng tân binh hen ~~"
     show:
-      failed: "User không tồn tại, bạn có thể đăng ký tại đây"
+      user:
+        failed: "User không tồn tại, bạn có thể đăng ký tại đây"
+      memorial:
+        failed: "Kí ức này không tồn tại"
     login:
       failed: "Lỗi thư điện tử/mật khẩu hoặc cả 2 đều chưa đúng"
       successed: "Đăng nhập thành công"

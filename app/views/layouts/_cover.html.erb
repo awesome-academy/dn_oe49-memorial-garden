@@ -1,5 +1,7 @@
 <% if yield(:title).eql? t("home.title") %>
   <%= render (logged_in? ? "layouts/create" : "layouts/signup") %>
+<% elsif yield(:title).eql? t("memorial.profile") %>
+  <%= render "layouts/show_memorial" %>
 <% else %>
   <%= content_tag(:div, "", class: yield(:cover)) %>
 <% end %>
