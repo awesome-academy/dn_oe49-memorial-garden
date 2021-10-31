@@ -36,4 +36,18 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def correct_user user
+    return if current_user?(user)
+
+    flash[:danger] = t("flash.edit.wrong_user")
+    redirect_to(root_url)
+  end
+
+  def correct_member
+    return if @memorial.share? current_user
+
+    flash[:danger] = t("flash.edit.wrong_user")
+    redirect_to(root_url)
+  end
 end

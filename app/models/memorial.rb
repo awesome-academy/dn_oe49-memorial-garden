@@ -1,18 +1,25 @@
 class Memorial < ApplicationRecord
   ATR_PERMIT = %i(name gender cause_of_death relationship avatar).freeze
 
+  enum privacy_type: {public: 0, private: 1, shared: 2}, _prefix: true
+
   scope :by_name_asc, ->{order :name}
   scope :search_by_name, (lambda do |name|
     where "name LIKE ?", "%#{name}%" if name.present?
   end)
-  scope :find_user, ->(user){where user_id: user.id if user.present?}
-
+  scope :type_of_index, (lambda do |user|
+    if user.present?
+      where user_id: user.id
+    else
+      where privacy_type: :public
+    end
+  end)
   belongs_to :user
   has_many :placetimes, dependent: :destroy
   has_many :contributions, dependent: :destroy
   has_many :user_relations, class_name: AccessPrivacy.name,
            foreign_key: :memorial_id, dependent: :destroy
-  has_many :shared_user, through: :user_relations, source: :user
+  has_many :shared_users, through: :user_relations, source: :user
   has_one_attached :avatar
 
   validates :name, presence: true, length: {maximum: Settings.length.digit_50}
@@ -42,8 +49,27 @@ class Memorial < ApplicationRecord
     placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?).pop.date
   end
 
+  def year type
+    full_date = date(type)
+    return "?" if full_date.blank?
+
+    full_date.year
+  end
+
   def place type
     placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?)
               .pop.location
+  end
+
+  def share user
+    shared_users << user
+  end
+
+  def unshare user
+    shared_users.delete(user)
+  end
+
+  def share? user
+    shared_users.include?(user)
   end
 end

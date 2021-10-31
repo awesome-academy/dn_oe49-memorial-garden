@@ -6,5 +6,6 @@ class CreateAccessPrivacies < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :access_privacies, [:user_id, :memorial_id], unique: true
   end
 end

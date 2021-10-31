@@ -1,3 +1,5 @@
+
+
 .main-banner {
   background-repeat: no-repeat;
   background-position: center center;
@@ -233,16 +235,16 @@ label {
   padding-top: 500px;
 }
 
-header{
+header {
   bottom: 899px;
 }
 
-.datetime select:nth-child(1){
+.datetime select:nth-child(1) {
   width: 70px;
   text-indent: 15px;
 }
 
-.datetime select:nth-child(2){
+.datetime select:nth-child(2) {
   width: 55px;
 }
 
@@ -253,24 +255,28 @@ header{
 .datetime select:nth-child(4) {
   width: 55px;
 }
-.datetime lable:nth-child(5){
+
+.datetime lable:nth-child(5) {
   width: 20px;
   text-indent: 15px;
 }
 
-.datetime input:nth-child(6){
+.datetime input:nth-child(6) {
   width: 180px;
   text-indent: 15px;
 }
 
-#q{
+#q {
   margin-left: 20px;
 }
 
-h{
+h {
   margin-top: 3px;
 }
 
+.navbar {
+  margin-bottom: 20px;
+}
 
 .show-banner {
   background-repeat: no-repeat;
@@ -293,11 +299,11 @@ h{
 }
 
 .show-banner .top-text h2 {
- color: #30442c;
-font-size: 53px;
-letter-spacing: 0;
-font-weight: 400;
-line-height: 1.15em;
+  color: #30442c;
+  font-size: 53px;
+  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.15em;
 }
 
 .show-banner ul.categories {
@@ -342,7 +348,52 @@ line-height: 1.15em;
 
 .about {
   color: #c7c5c8;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   font-size: 240%;
   text-align: left;
+}
+
+#menu_memorial {
+  background-color: #F5DDC4;
+}
+
+#menu_memorial .menu-wrapper {
+  max-width: 1120px;
+  padding: 0 8px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#menu_memorial .menu-wrapper>ul,
+#menu_memorial_mobile .menu-wrapper>ul {
+  background-color: #F5DDC4;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+}
+
+#menu_memorial .menu-wrapper>ul>li,
+#menu_memorial_mobile .menu-wrapper>ul>li {
+  display: inline;
+}
+
+#menu_memorial .menu-wrapper>ul>li>a,
+#menu_memorial_mobile .menu-wrapper>ul>li>a {
+  padding-left: 30px;
+  padding-right: 60px;
+  color: #32150a;
+  font-size: 150%;
+}
+
+aside section span {
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1;
+  padding-left: 30px;
+}
+
+#memorial_privacy_type {
+  text-align: center;
+  font-size: 150%;
 }

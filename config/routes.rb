@@ -6,8 +6,9 @@ Rails.application.routes.draw do
     resources :users, except: %i(index destroy) do
       resources :memorials, only: :index
     end
-    resources :memorials, only: %i(show new create)
-    get "memorials", to: "memorials#index"
+    resources :memorials, only: %i(index show new create) do
+      match "privacy_settings", on: :member, via: [:get, :patch]
+    end
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
