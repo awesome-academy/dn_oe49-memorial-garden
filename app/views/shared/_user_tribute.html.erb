@@ -1,0 +1,5 @@
+<% if current_user.wrote_tribute? @memorial %>
+  <%= render current_user.show_tribute(@memorial) %>
+<% else %>
+  <%= render "shared/tribute_form" %>
+<% end %>

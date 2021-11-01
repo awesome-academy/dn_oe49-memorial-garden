@@ -1,0 +1,12 @@
+<div class="tribute rounded-box" id="tribute_form">
+  <%= form_for([@memorial, @contribution], remote: true) do |f| %>
+    <%= hidden_field_tag :contribution_type, :tribute %>
+    <%= render "shared/error_messages", object: f.object %>
+    <%= f.fields_for :tribute do |tribute| %>
+      <%= tribute.text_area :eulogy,
+        placeholder: t("memorial.show.tribute_ph") %>
+    <% end %>
+    <%= f.submit t("memorial.show.button"),
+      class: "btn btn-primary button_create" %>
+  <% end %>
+</div>
