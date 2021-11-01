@@ -1,10 +1,24 @@
 <div class="tribute rounded-box tribute_form">
   <div class="row">
-    <aside class="col-md-4">
+    <aside >
       <section class="user_info">
         <h1>
-          <span> <p class="eulogy"> <%= tribute.eulogy %> </p></span>
-          <span class="author"><%= tribute.belongs_username %></span>
+          <span><p class="eulogy"><%= tribute.eulogy %></p></span>
+          <span class="author"><%= link_to tribute.belongs_user.name,
+            tribute.belongs_user %></span>
+          <% if authorize_tribute_modifier(tribute) %>
+            <footer style="margin-top: -5px;" >
+              <nav>
+                <ul class = "edit_delete">
+                  <li><%= link_to t("header.edit"),
+                    [:edit,@memorial, tribute.contribution], remote: true  %></li>
+                  <li><%= link_to t("header.delete"), [@memorial,
+                    tribute.contribution], method: :delete, remote: true,
+                    data: {confirm: t("delete.confirm")} %></li>
+                </ul>
+              </nav>
+            </footer>
+          <% end %>
         </h1>
       </section>
     </aside>

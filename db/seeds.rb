@@ -47,4 +47,10 @@ end
 end
 users = User.all
 memorials = Memorial.all
-memorials.each {|memorial| memorial.share users.excluding(memorial.user)}
+memorials.each do |memorial|
+  memorial.share users.excluding(memorial.user)
+  users.each do |user|
+    eulogy = Faker::Quotes::Shakespeare.as_you_like_it_quote
+    memorial.contributions.create(user_id: user.id, contribution_type: :tribute, tribute_attributes: {eulogy: eulogy})
+  end
+end

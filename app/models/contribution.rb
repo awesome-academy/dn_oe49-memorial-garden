@@ -16,6 +16,6 @@ class Contribution < ApplicationRecord
   validates_each :contribution_type do |record, attr|
     user = User.find_by(id: record.user_id)
     memorial = Memorial.find_by(id: record.memorial_id)
-    record.errors.add(attr) if user.wrote_tribute?(memorial)
+    record.errors.add(attr) if user.wrote_tribute?(memorial) && record.id.blank?
   end
 end

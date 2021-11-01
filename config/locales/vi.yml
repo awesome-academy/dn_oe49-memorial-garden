@@ -15,6 +15,8 @@ vi:
     profile: "Trang cá nhân"
     settings: "Tùy chọn"
     logout: "Thoát"
+    edit: "Chỉnh sửa"
+    delete: "Xóa"
   home:
     title: "Trang chủ"
     welcome: "Khu vườn diệu kỳ nơi về những ký ức trân quý"
@@ -178,3 +180,9 @@ vi:
     create:
       successed: "Gửi lời chào tạm biệt thành công"
       failed: "Gửi lời chào tạm biệt chưa thành công"
+    update:
+      successed: "Chỉnh sửa thành công"
+      failed: "Chỉnh sửa chưa thành công"
+    destroy:
+      successed: "Xóa thành công"
+      failed: "Xóa chưa thành công"
