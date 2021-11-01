@@ -50,4 +50,20 @@ module SessionsHelper
     flash[:danger] = t("flash.edit.wrong_user")
     redirect_to(root_url)
   end
+
+  def load name, id
+    model = name.to_s.capitalize.constantize
+    return if instance_variable_set("@#{name}", model.find_by(id: params[id]))
+
+    flash[:danger] = t("flash.show.#{name}.failed")
+    redirect_to root_path
+  end
+
+  def load_user_by_email email
+    @user = User.find_by email: email
+    return if @user
+
+    flash[:danger] = t("flash.show.user.failed")
+    redirect_to request.referer
+  end
 end

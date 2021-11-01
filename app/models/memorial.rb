@@ -4,9 +4,6 @@ class Memorial < ApplicationRecord
   enum privacy_type: {public: 0, private: 1, shared: 2}, _prefix: true
 
   scope :by_name_asc, ->{order :name}
-  scope :search_by_name, (lambda do |name|
-    where "name LIKE ?", "%#{name}%" if name.present?
-  end)
   scope :type_of_index, (lambda do |user|
     if user.present?
       where user_id: user.id
