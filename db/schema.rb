@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["memorial_id"], name: "index_access_privacies_on_memorial_id"
+    t.index ["user_id", "memorial_id"], name: "index_access_privacies_on_user_id_and_memorial_id", unique: true
     t.index ["user_id"], name: "index_access_privacies_on_user_id"
   end
 

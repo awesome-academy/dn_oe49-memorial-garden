@@ -1,0 +1,12 @@
+<% provide :title, t("memorial.profile") %>
+<%= form_with(model: @memorial, id: "memorial-settings", url: privacy_settings_memorial_path(@memorial), local: false) do |f| %>
+  <h1> <%= User.human_attribute_name(:privacy_type) %> </h1>
+  <%= f.select :privacy_type, options_for_select([[t("memorial.privacy.public"),
+    :public], [t("memorial.privacy.private"), :private],
+    [t("memorial.privacy.shared"), :shared]], @memorial.privacy_type) %>
+  <% if @memorial.privacy_type_shared? %>
+    <h3><%= t("memorial.privacy.shared_people") %></h3>
+    <%= render @friends %>
+  <% end %>
+  <%= f.submit t("edit.button"), class: "btn btn-primary" %>
+<% end %>

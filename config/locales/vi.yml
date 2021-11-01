@@ -47,7 +47,20 @@ vi:
     new:
       button: "Tạo Tưởng Nhớ"
     show:
-      about: "Cuộc đời"
+      life: "Cuộc đời"
+      about: "Viếng"
+    privacy:
+      title: "Chế độ riêng tư"
+      public: "Công khai"
+      private: "Riêng tư"
+      shared:  "Chia sẻ với gia đình và bạn bè"
+      shared_people: "Những người đã được chia sẻ"
+    gallery:
+      title: "Khoảnh khắc"
+    stories:
+      title: "Những câu chuyện"
+    biography:
+      title: "Tiểu sử"
   placetime:
     die_on: "Mất ngày:"
     born_on: "Sinh ngày:"
@@ -66,6 +79,7 @@ vi:
         password_confirmation: "Xác nhận lại mật khẩu"
         avatar: "Ảnh đại diện"
         gender: "Giới tính"
+        privacy_type: "Chế độ chia sẻ tùy chọn"
       memorial:
         name: "Tên của họ"
         avatar: "Ảnh"

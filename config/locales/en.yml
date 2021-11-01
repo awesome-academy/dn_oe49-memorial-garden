@@ -42,7 +42,20 @@ en:
     new:
       button: "Create a Memorial"
     show:
-      about: "About"
+      about: "Visit"
+      life: "Life"
+    privacy:
+      title: "Privacy Settings"
+      public: "Public"
+      private: "Private"
+      shared:  "Share with family and friends"
+      shared_people: "The people who's be shared"
+    gallery:
+      title: "Gallery"
+    stories:
+      title: "Stories"
+    biography:
+      title: "Biography"
   placetime:
     die_on: "Die on"
     born_on: "Born on"
@@ -59,6 +72,7 @@ en:
     attributes:
       memorial:
         cause_of_death: "Passed away by"
+        privacy_type: "Privacy option"
   form:
     error: {
       one: "The form contains %{count} error.",
@@ -74,8 +88,6 @@ en:
         failed: "User's not exist, you can sign up here."
       memorial:
         failed: "Memorial's not exist"
-
-
     login:
       failed: "Invalid email/password combination"
       successed: "Log in successed"

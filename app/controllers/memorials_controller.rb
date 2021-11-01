@@ -3,11 +3,13 @@ class MemorialsController < ApplicationController
     logged_in_user
     load :user
   end
-  before_action :logged_in_user, only: %i(new create)
-  before_action ->{load :memorial}, only: :show
+  before_action :logged_in_user, only: %i(new create privacy_settings)
+  before_action ->{load :memorial}, only: %i(show privacy_settings)
+  before_action :check_authorize_access, only: :show
+  before_action ->{correct_user @memorial.user}, only: :privacy_settings
 
   def index
-    @memorials = Memorial.includes(:placetimes).find_user(@user)
+    @memorials = Memorial.includes(:placetimes).type_of_index(@user)
                          .search_by_name(search_params).by_name_asc
                          .page(params[:page]).per(Settings.per_page.digit_5)
   end
@@ -30,6 +32,18 @@ class MemorialsController < ApplicationController
       flash.now[:danger] = t("memorial.create.failed")
       render :new
     end
+  end
+
+  def privacy_settings
+    @friends = @memorial.shared_users
+    return unless params[:memorial]
+
+    if @memorial.update(privacy_params)
+      flash[:success] = t("flash.update.successed")
+    else
+      flash.now[:danger] = t("flash.update.failed")
+    end
+    redirect_to request.referer
   end
 
   private
@@ -57,5 +71,20 @@ class MemorialsController < ApplicationController
     params.require(:memorial)
           .permit(Memorial::ATR_PERMIT,
                   placetimes_attributes: Placetime::ATR_PERMIT)
+  end
+
+  def privacy_params
+    params.require(:memorial).permit(:privacy_type)
+  end
+
+  def check_authorize_access
+    return if current_user? @memorial.user
+
+    case @memorial.privacy_type
+    when "private"
+      correct_user @memorial.user
+    when "shared"
+      correct_member
+    end
   end
 end

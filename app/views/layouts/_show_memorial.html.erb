@@ -1,12 +1,37 @@
-  <div class="show-banner">
+<div class="show-banner">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="top-text header-text">
-          <h2><%= @memorial.name %></h2>
-          <h2><%= birth_and_death_year @memorial %></h2>
+          <%= avatar_for @memorial if @memorial.avatar.attached? %>
+          <h2><%= @memorial.name %> </h2>
+          <h2><%= birth_and_death_year @memorial %> </h2>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div id="menu_memorial">
+  <div class="menu-wrapper">
+    <ul>
+      <li>
+        <%= link_to t("memorial.show.about"), @memorial %>
+      </li>
+      <li>
+        <%= link_to t("memorial.biography.title"), "#" %>
+      </li>
+      <li>
+        <%= link_to t("memorial.stories.title"), "#" %>
+      </li>
+      <li class="gallery_menu">
+        <%= link_to t("memorial.gallery.title"), "#" %>
+      </li>
+      <% if current_user? @memorial.user %>
+        <li>
+          <%= link_to t("memorial.privacy.title"),
+            privacy_settings_memorial_path(@memorial) %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
