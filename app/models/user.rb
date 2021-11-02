@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   ATR_PERMIT = %i(name email password password_confirmation
                   gender avatar).freeze
+
+  scope :unshared_member, (lambda do |memorial|
+    where.not id: memorial.shared_users.ids << memorial.user.id
+  end)
+
   has_many :memorials, dependent: :destroy
   has_many :contributions, dependent: :destroy
   has_many :memorial_relations, class_name: AccessPrivacy.name,

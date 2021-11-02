@@ -1,16 +1,19 @@
 class MemorialsController < ApplicationController
   before_action only: :index, if: :user_mode? do
     logged_in_user
-    load :user
+    load :user, :user_id
   end
-  before_action :logged_in_user, only: %i(new create privacy_settings)
-  before_action ->{load :memorial}, only: %i(show privacy_settings)
+  before_action :logged_in_user, only: %i(new create privacy_settings
+                                          search_unshared_member)
+  before_action ->{load :memorial, :id}, only: %i(show privacy_settings)
+  before_action ->{load :memorial, :memorial_id}, only: :search_unshared_member
   before_action :check_authorize_access, only: :show
-  before_action ->{correct_user @memorial.user}, only: :privacy_settings
+  before_action ->{correct_user @memorial.user}, only: %i(privacy_settings
+    search_unshared_member)
 
   def index
     @memorials = Memorial.includes(:placetimes).type_of_index(@user)
-                         .search_by_name(search_params).by_name_asc
+                         .search_by(:name, search_params).by_name_asc
                          .page(params[:page]).per(Settings.per_page.digit_5)
   end
 
@@ -35,7 +38,7 @@ class MemorialsController < ApplicationController
   end
 
   def privacy_settings
-    @friends = @memorial.shared_users
+    @members = @memorial.shared_users
     return unless params[:memorial]
 
     if @memorial.update(privacy_params)
@@ -46,21 +49,23 @@ class MemorialsController < ApplicationController
     redirect_to request.referer
   end
 
+  def search_unshared_member
+    @users_by_name = User.unshared_member(@memorial)
+                         .search_by(:name, search_params)
+    @users_by_email = User.unshared_member(@memorial)
+                          .search_by(:email, search_params)
+    respond_to do |format|
+      format.html {}
+      format.json {}
+    end
+  end
+
   private
 
   def user_mode?
     able = params[:user_id].present?
     @title = t("memorial.#{able ? 'title' : 'hall'}")
     able
-  end
-
-  def load name
-    model = name.to_s.capitalize.constantize
-    id = name.eql?(:memorial) ? :id : "#{name}_id"
-    return if instance_variable_set("@#{name}", model.find_by(id: params[id]))
-
-    flash[:danger] = t("flash.show.#{name}.failed")
-    redirect_to root_path
   end
 
   def search_params

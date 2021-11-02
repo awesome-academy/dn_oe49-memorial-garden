@@ -50,6 +50,9 @@ en:
       private: "Private"
       shared:  "Share with family and friends"
       shared_people: "The people who's be shared"
+      add: "Add members"
+      add_infor: "Put name or email the people you want to add"
+      delete: "Remove from list"
     gallery:
       title: "Gallery"
     stories:
@@ -88,6 +91,8 @@ en:
         failed: "User's not exist, you can sign up here."
       memorial:
         failed: "Memorial's not exist"
+        invalid_privacy: "Link is not right"
+        invalid_authorized: "You cant do this action"
     login:
       failed: "Invalid email/password combination"
       successed: "Log in successed"
@@ -104,6 +109,10 @@ en:
       failed: "Unsuccessfull deletion"
     edit:
       wrong_user: "You can't do this action"
+    share:
+      successed: "Add member successed"
+    unshare:
+      successed: "Remove member successed"
   edit:
     title: "Edit user"
     head: "Update your profile"
