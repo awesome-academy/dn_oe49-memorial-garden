@@ -47,8 +47,13 @@ vi:
     new:
       button: "Tạo Tưởng Nhớ"
     show:
+      title: "Kí ức về %{name} sẽ sống ở đây, mãi bên chúng ta"
       life: "Cuộc đời"
       about: "Viếng"
+      tribute: "Gửi lời chào tạm biệt"
+      signup: "Đăng nhập để gửi lời chào tạm biệt"
+      tribute_ph: "Điền vào đây"
+      button: "Lưu"
     privacy:
       title: "Chế độ riêng tư"
       public: "Công khai"
@@ -89,6 +94,10 @@ vi:
         gender: "Giới tính"
         cause_of_death: "Qua đời bởi"
         relationship: "Họ là gì của bạn"
+      contribution/tribute:
+        eulogy: "Lời chào tạm biệt"
+      contribution:
+        contribution_type: "Lời tiễn biệt"
     errors:
       models:
         user:
@@ -103,6 +112,12 @@ vi:
               blank: "chưa được điền."
             relationship:
               blank: "nào ?"
+        tribute:
+          blank: "chưa được điền"
+        contribution:
+          attributes:
+            contribution_type:
+              invalid: "chỉ được ghi 1 lần"
   form:
     error: "Biểu mẫu chứa %{count} lỗi."
     signup: "Tạo tại khoản"
@@ -159,3 +174,7 @@ vi:
   search:
     title: "Tìm kiếm"
     inf: "Gõ vào đây"
+  tribute:
+    create:
+      successed: "Gửi lời chào tạm biệt thành công"
+      failed: "Gửi lời chào tạm biệt chưa thành công"

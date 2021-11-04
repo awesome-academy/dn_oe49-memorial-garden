@@ -17,7 +17,14 @@ class MemorialsController < ApplicationController
                          .page(params[:page]).per(Settings.per_page.digit_5)
   end
 
-  def show; end
+  def show
+    return unless logged_in?
+
+    @contribution = @memorial.contributions
+                             .build(user_id: current_user.id,
+                                contribution_type: :tribute)
+    @tribute = @contribution.build_tribute
+  end
 
   def new
     @memorial = current_user.memorials.build

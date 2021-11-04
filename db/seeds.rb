@@ -18,6 +18,7 @@ user = User.create!(name: "Thanh Le",
                              location: birth_place, is_born: 1)
   memorial.placetimes.create(date: death_date,
                              location: death_place, is_born: 0)
+  memorial.contributions.create(user_id: user.id, relationship: relationship, contribution_type: 0, tribute_attributes: {eulogy: 'hihi'})
 end
 5.times do |n|
   user_name = Faker::Name.name
@@ -41,6 +42,7 @@ end
                                location: birth_place, is_born: 1)
     memorial.placetimes.create(date: death_date,
                                location: death_place, is_born: 0)
+    memorial.contributions.create(user_id: user.id, relationship: relationship, contribution_type: 0, tribute_attributes: {eulogy: 'hihi'})
   end
 end
 users = User.all

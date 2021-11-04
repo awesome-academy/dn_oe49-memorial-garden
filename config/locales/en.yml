@@ -42,8 +42,13 @@ en:
     new:
       button: "Create a Memorial"
     show:
+      title: "The memories of %{name} will live here, with us forever"
       about: "Visit"
       life: "Life"
+      tribute: "Leave a tribute"
+      signup: "Sign in for leave a tribute"
+      tribute_ph: "Write in this"
+      button: "Save"
     privacy:
       title: "Privacy Settings"
       public: "Public"
@@ -76,6 +81,12 @@ en:
       memorial:
         cause_of_death: "Passed away by"
         privacy_type: "Privacy option"
+      contribution/tribute:
+        eulogy: "Eulogy"
+    errors:
+      models:
+       tribute:
+          blank: "is not written"
   form:
     error: {
       one: "The form contains %{count} error.",
@@ -127,3 +138,7 @@ en:
   search:
     title: "Search"
     inf: "Type here"
+  tribute:
+    create:
+      successed: "Create tribute successed"
+      failed: "Create tribute failed"

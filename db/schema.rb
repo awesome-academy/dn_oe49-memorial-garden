@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
     t.bigint "memorial_id", null: false
     t.bigint "user_id", null: false
     t.integer "contribution_type", null: false
-    t.string "relationship", null: false
+    t.string "relationship"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["memorial_id"], name: "index_contributions_on_memorial_id"
