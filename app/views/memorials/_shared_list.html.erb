@@ -1,0 +1,22 @@
+<div id= "shared_list">
+  <h3><%= t("memorial.privacy.shared_people") %></h3>
+  <%= form_with model: @memorial.user_relations.build, local: false,
+                html: { class: "form-inline" } do |form| %>
+    <div><%= hidden_field_tag :memorial_id, @memorial.id %></div>
+    <div class="row form-group">
+      <div class="col-sm-8">
+        <%= form.text_field :query, value: params[:query],
+          placeholder: t("memorial.privacy.add_infor"),
+          size: 40, data: {behavior: "autocomplete"},
+          class: "form-control", id: "shared_input" %>
+      </div>
+      <div class="col-sm-4">
+        <%= form.button t("memorial.privacy.add"),
+          class: "btn btn-outline-success form-control" %>
+      </div>
+    </div>
+  <% end %>
+  <div id= "shared_member">
+    <%= render @members %>
+  </div>
+</div>

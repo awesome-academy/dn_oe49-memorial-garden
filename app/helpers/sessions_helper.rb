@@ -67,6 +67,11 @@ module SessionsHelper
     redirect_to request.referer
   end
 
+  def authorize_display_unshare_member
+    params[:action].eql?("privacy_settings") ||
+      params[:controller].eql?("access_privacies")
+  end
+
   def authorize_tribute_modifier tribute
     tribute.belongs_user.eql? current_user
   end

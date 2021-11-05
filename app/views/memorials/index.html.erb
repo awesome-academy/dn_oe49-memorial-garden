@@ -1,8 +1,9 @@
 <% provide :title, @title %>
-<% provide :cover, "create-banner create-image2" %>
-<h1><%= @title %></h1>
+<div class= "container indent_content">
+<h1 class= "indent_title"><%= @title %></h1>
 <%= render "shared/search_form" %>
 <ol class="memorials">
   <%= render @memorials %>
 </ol>
 <%= paginate @memorials %>
+</div>

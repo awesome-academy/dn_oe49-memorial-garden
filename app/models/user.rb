@@ -37,6 +37,10 @@ class User < ApplicationRecord
     contributions.tribute.search_by_memorial(memorial)&.first&.tribute
   end
 
+  def find_relation memorial
+    memorial_relations.select{|rela| rela.memorial_id.eql? memorial.id}
+  end
+
   private
 
   def downcase_email

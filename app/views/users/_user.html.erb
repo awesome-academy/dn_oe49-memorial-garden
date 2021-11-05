@@ -5,10 +5,9 @@
         <%= avatar_for user %>
         <%= link_to user.name, user %>
       </h1>
-      <% if params[:action].eql? "privacy_settings" %>
-        <%= link_to t("memorial.privacy.delete"), user.memorial_relations
-          .find_by(memorial_id: @memorial.id), method: :delete, remote: true,
-          data: {confirm: t("delete.confirm")} %>
+      <% if authorize_display_unshare_member %>
+        <%= link_to t("memorial.privacy.delete"), user.find_relation(@memorial), method: :delete, remote: true,
+          data: {confirm: t("delete.confirm"), class: "unshare"} %>
       <% end %>
     </section>
   </aside>

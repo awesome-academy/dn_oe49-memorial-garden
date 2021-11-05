@@ -6,7 +6,7 @@ class Tribute < ApplicationRecord
            foreign_key: :rep_tribute_id, dependent: :destroy
 
   validates :eulogy, presence: true,
-            length: {maximum: Settings.length.digit_200}
+            length: {maximum: Settings.length.digit_1000}
 
   scope :search_by_memorial, (lambda do |memorial|
     where contribution_id: memorial.contributions.tribute

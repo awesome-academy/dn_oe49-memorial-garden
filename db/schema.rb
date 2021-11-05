@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
   create_table "flowers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "contribution_id", null: false
     t.integer "type", default: 0, null: false
-    t.string "message"
+    t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["contribution_id"], name: "index_flowers_on_contribution_id"
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
     t.string "avatar"
     t.string "relationship", null: false
     t.integer "privacy_type", default: 0, null: false
-    t.string "biography"
+    t.text "biography"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_memorials_on_user_id"
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
   create_table "stories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "contribution_id", null: false
     t.string "image"
-    t.string "content", null: false
+    t.text "content", null: false
     t.bigint "rep_story_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
 
   create_table "tributes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "contribution_id", null: false
-    t.string "eulogy", null: false
+    t.text "eulogy", null: false
     t.bigint "rep_tribute_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -13,7 +13,8 @@ class MemorialsController < ApplicationController
                 only: %i(privacy_settings search_unshared_member)
 
   def index
-    @memorials = Memorial.includes(:placetimes).type_of_index(@user)
+    @memorials = Memorial.includes(:placetimes, :avatar_attachment)
+                         .type_of_index(@user)
                          .search_by(:name, search_params).by_name_asc
                          .page(params[:page]).per(Settings.per_page.digit_5)
   end
@@ -40,26 +41,30 @@ class MemorialsController < ApplicationController
 
   def create
     @memorial = current_user.memorials.build(memorial_params)
-    @memorial.avatar.attach(params[:memorial][:avatar])
+    avatar = params[:memorial][:avatar]
+    @memorial.avatar.attach(avatar) if avatar.present?
     if @memorial.save
       flash[:success] = t("memorial.create.successed")
       redirect_to root_url
     else
       flash.now[:danger] = t("memorial.create.failed")
-      render :new
     end
   end
 
   def privacy_settings
     @members = @memorial.shared_users
-    return unless params[:memorial]
+                        .includes(:avatar_attachment, :memorial_relations)
+    return if params[:memorial].blank?
 
     if @memorial.update(privacy_params)
-      flash[:success] = t("flash.update.successed")
+      flash.now[:success] = t("flash.update.successed")
     else
       flash.now[:danger] = t("flash.update.failed")
     end
-    redirect_to request.referer
+    respond_to do |format|
+      format.html{render "privacy_settings"}
+      format.js
+    end
   end
 
   def search_unshared_member
