@@ -28,8 +28,8 @@ class MemorialsController < ApplicationController
     else
       store_location
     end
-    @tributes = Tribute.search_by_memorial(@memorial)
-                       .includes(contribution: :user)
+    @tributes = Tribute.search_by_memorial(@memorial, :tribute)
+                       .includes(contribution: :user).newest
                        .page(params[:page]).per(Settings.per_page.digit_3)
   end
 
@@ -53,7 +53,7 @@ class MemorialsController < ApplicationController
 
   def privacy_settings
     @members = @memorial.shared_users
-                        .includes(:avatar_attachment, :memorial_relations)
+                        .includes(:memorial_relations, avatar_attachment: :blob)
     return if params[:memorial].blank?
 
     if @memorial.update(privacy_params)

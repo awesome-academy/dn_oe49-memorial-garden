@@ -73,6 +73,10 @@ module SessionsHelper
   end
 
   def authorize_tribute_modifier tribute
-    tribute.belongs_user.eql? current_user
+    tribute.belongs_user.eql?(current_user)
+  end
+
+  def authorize_owner tribute
+    tribute.contribution.memorial.user.eql?(current_user)
   end
 end

@@ -1,0 +1,5 @@
+<% @flowers = Flower.search_by_memorial(@memorial, :flower).newest
+  .page(params[:page]).per(Settings.per_page.digit_3) %>
+$("#flash").html('<%= j render partial: "shared/flash" %>');
+$('#flower_list').html('<%= j render @flowers %>');
+$("#error").html('<%= j render partial: "shared/error_messages", locals: {object: @contribution.flower} %>');

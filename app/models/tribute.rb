@@ -7,12 +7,4 @@ class Tribute < ApplicationRecord
 
   validates :eulogy, presence: true,
             length: {maximum: Settings.length.digit_1000}
-
-  scope :search_by_memorial, (lambda do |memorial|
-    where contribution_id: memorial.contributions.tribute
-  end)
-
-  def belongs_user
-    contribution.user
-  end
 end

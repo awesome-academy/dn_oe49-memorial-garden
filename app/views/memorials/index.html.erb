@@ -1,9 +1,11 @@
 <% provide :title, @title %>
 <div class= "container indent_content">
-<h1 class= "indent_title"><%= @title %></h1>
-<%= render "shared/search_form" %>
-<ol class="memorials">
-  <%= render @memorials %>
-</ol>
-<%= paginate @memorials %>
+  <h1 class= "indent_title"><%= @title %></h1>
+    <%= render "shared/search_form" %>
+  <ol class="memorials">
+    <%= render @memorials %>
+  </ol>
+  <div class = "page_divive1">
+    <%= paginate @memorials %>
+  </div>
 </div>

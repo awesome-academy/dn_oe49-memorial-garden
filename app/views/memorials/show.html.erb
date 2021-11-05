@@ -23,12 +23,12 @@
   </aside>
 </div>
 <h1 class="tribute-title"><%= t "memorial.show.tribute" %></h1>
-<div id="tribute_form">
+<div id="tribute_form" class="write_form">
   <%= render (logged_in?  ? "shared/user_tribute" : "shared/tribute_signup") %>
 </div>
 <ol class="memorials", id="tributes">
   <%= render @tributes %>
 </ol>
-<div id="paginator">
-<%= paginate @tributes, remote: true  %>
+<div id="paginator", class= "page_divive">
+  <%= paginate @tributes, remote: true %>
 </div>

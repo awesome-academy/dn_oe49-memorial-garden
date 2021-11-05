@@ -14,6 +14,10 @@ module ApplicationHelper
     image_tag("avatar-none.jpg", class: "gravatar")
   end
 
+  def image_for flower
+    image_tag(flower.flower_detail.image, class: "image_flower")
+  end
+
   def show_date_of model, type
     full_detail_date = model.send(:date, type)
     return "?" if full_detail_date.blank?

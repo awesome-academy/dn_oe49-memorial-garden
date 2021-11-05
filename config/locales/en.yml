@@ -2,6 +2,7 @@ en:
   time:
     formats:
       default: "%Y-%m-%d"
+    posted: "Posted %{count} ago."
   lang:
     en: "English"
     vi: "Vietnamse"
@@ -47,6 +48,7 @@ en:
       title: "The memories of %{name} will live here, with us forever"
       about: "Visit"
       life: "Life"
+      flower: "Đến đặt hoa"
       tribute: "Leave a tribute"
       signup: "Sign in for leave a tribute"
       tribute_ph: "Write in this"
@@ -150,3 +152,26 @@ en:
     delete:
       successed: "Delete tribute successed"
       failed: "Delete tribute failed"
+  flower_name:
+    white_lily: "White Lily"
+    lavender_rose: "Lavender Rose"
+    independence_poppy: "Independence Poppy"
+    harvest_daisy: "Harvest Daisy"
+    yellow_blue_white_lily: "Yellow Blue White Lily"
+    farmhouse_sunflower: "Farmhouse Sunflower"
+    red_rose: "Red Rose"
+    poinsettia: "Poinsettia"
+    calla_lily_rose: "Calla Lily Rose"
+    patriotic: "Patriotic"
+    peony_rose: "Peony Rose"
+    yellow_rose: "Yellow Rose"
+    red_rosebud_lily: "Red Rosebud Lily"
+  flower:
+    send: "send"
+    message: " with a message:"
+    input: "Choose the flower"
+    create:
+      successed: "Send flower successed"
+      failed: "Send flower unsuccessed"
+    title: "Beautiful Flower For "
+    message: "Write message in this"

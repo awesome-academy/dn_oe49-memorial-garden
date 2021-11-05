@@ -1,0 +1,22 @@
+<h1><%= t("flower.title") %><%= @memorial.name %></h1>
+<%= form_with model: [@memorial, @contribution], local: false,
+  html: {:class => "form_all"} do |f| %>
+<%= hidden_field_tag :contribution_type, :flower %>
+  <div id="error">
+    <%= render "shared/error_messages", object: f.object %>
+  </div>
+  <%= f.fields_for :flower do |flower| %>
+    <%= flower.label t("flower.input") %>
+    <%= flower.collection_select(:flower_detail_id, FlowerDetail.all,
+      :id, :translated_name, {}, {:class=>"form_indent"})%>
+    <%= flower.text_area :message,
+        placeholder: t("flower.message"), class: "form_indent" %>
+  <% end %>
+  <%= f.submit t("memorial.show.button"), class: "btn btn-primary" %>
+<% end %>
+<div id = "flower_list">
+  <%= render @flowers %>
+</div>
+<div class="page_divive", id= "paginator">
+  <%= paginate @flowers, remote: true %>
+</div>
