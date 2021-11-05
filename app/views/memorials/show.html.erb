@@ -26,3 +26,8 @@
 <div id="tribute_form">
   <%= render (logged_in?  ? "shared/user_tribute" : "shared/tribute_signup") %>
 </div>
+<ol class="memorials">
+  <%= render @tributes %>
+</ol>
+<%= paginate @tributes %>
+

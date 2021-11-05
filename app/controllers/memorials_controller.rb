@@ -18,12 +18,17 @@ class MemorialsController < ApplicationController
   end
 
   def show
-    return unless logged_in?
-
-    @contribution = @memorial.contributions
-                             .build(user_id: current_user.id,
-                                contribution_type: :tribute)
-    @tribute = @contribution.build_tribute
+    if logged_in?
+      @contribution = @memorial.contributions
+                               .build(user_id: current_user.id,
+                                  contribution_type: :tribute)
+      @tribute = @contribution.build_tribute
+    else
+      store_location
+    end
+    @tributes = Tribute.search_by_memorial(@memorial)
+                       .includes(contribution: :user)
+                       .page(params[:page]).per(Settings.per_page.digit_3)
   end
 
   def new

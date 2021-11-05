@@ -10,6 +10,8 @@ en:
     profile: "Profile"
     settings: "Settings"
     logout: "Log out"
+    edit: "Edit"
+    delete: "Delete"
   home:
     title: "Home"
     welcome: "Welcome to the Memorial Garden"
@@ -142,3 +144,9 @@ en:
     create:
       successed: "Create tribute successed"
       failed: "Create tribute failed"
+    update:
+      successed: "Update tribute successed"
+      failed: "Update tribute failed"
+    delete:
+      successed: "Delete tribute successed"
+      failed: "Delete tribute failed"

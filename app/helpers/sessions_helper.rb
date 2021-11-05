@@ -66,4 +66,8 @@ module SessionsHelper
     flash[:danger] = t("flash.show.user.failed")
     redirect_to request.referer
   end
+
+  def authorize_tribute_modifier tribute
+    tribute.belongs_user.eql? current_user
+  end
 end

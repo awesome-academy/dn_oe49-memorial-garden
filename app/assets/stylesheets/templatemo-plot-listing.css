@@ -1,384 +1,473 @@
+
+
 .main-banner {
-     background-repeat: no-repeat;
-     background-position: center center;
-     background-size: cover;
-     background-image: url(candle.jpg);
-     padding: 500px 0px 180px 0px;
-     position: relative;
-     overflow: hidden;
-}
- .main-banner .top-text {
-     text-align: center;
-}
- .main-banner .top-text h6 {
-     color: #fff;
-     font-size: 15px;
-     font-weight: 500;
-     text-transform: uppercase;
-}
- .main-banner .top-text h2 {
-     color: #fff;
-     font-size: 45px;
-     font-weight: 800;
-     text-transform: capitalize;
-     margin-top: 15px;
-     margin-bottom: 45px;
-}
- .main-banner ul.categories {
-     width: 100%;
-     margin-top: 60px;
-     text-align: center;
-}
- .main-banner ul.categories li {
-     display: inline-block;
-     text-align: center;
-     width: 18%;
-}
- .main-banner ul.categories li a {
-     color: #fff;
-     text-align: center;
-     font-size: 15px;
-     margin-top: 15px;
-}
- .main-banner ul.categories li .icon {
-     display: block;
-     margin: 0 auto 12px auto;
-     width: 66px;
-     height: 66px;
-     border-radius: 50%;
-     text-align: center;
-     line-height: 62px;
-     color: #8d99af;
-     background-color: #fff;
-     transition: all .5s;
-}
- .main-banner ul.categories li a:hover .icon {
-     background-color: #2b2d42;
-}
- .main-banner ul.categories li .icon img {
-     max-width: 27px;
-}
- .title {
-     color: #c7c5c8;
-     margin-bottom: 30px;
-     font-size: 300%;
-}
- .heading {
-     color: #c7c5c8;
-     margin-bottom: 30px;
-     font-size: 170%;
-}
- .black {
-     background-color: #2a2727;
-}
- .quoteText {
-     color: #c7c5c8;
-     text-indent: 250px;
-     font-family: "Merriweather", "Georgia", serif;
-     font-size: 130%;
-     padding: 0px 5px 10px 0px;
-     line-height: 21px
-}
- .authorOrTitle {
-     color: #c7c5c8;
-     float: right;
-     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-     font-weight: bold
-}
- .indent {
-     text-indent: 50px;
-     color: #c7c5c8;
-     margin-bottom: 30px;
-     font-size: 150%;
-}
- label {
-     color: white;
-     display: inline-block;
-     max-width: 100%;
-     margin-bottom: 5px;
-     font-weight: 700;
-}
- .gravatar {
-     width: 80px;
-     height: 80px;
-}
- .create-memorial {
-     background: #cccccc;
-     margin-top: 20px;
-     border: 1px solid #c39c65;
-     border-radius: 16px;
-     box-sizing: border-box;
-     color: #1b4046;
-     padding: 48px;
-     position: relative;
-     text-align: center;
-     z-index: 2;
-}
- .form-title {
-     color: #1b4046;
-     font-size: 48px;
-     font-weight: 600;
-     line-height: 1.2em;
-     margin: 4px 0 18px;
-     text-align: center;
-}
- .title-help-text {
-     color: #63787b;
-     font-size: 20px;
-     letter-spacing: .1px;
-     line-height: 140%;
-     margin: 0;
-     text-transform: uppercase
-}
- .name-input {
-     width: 30%;
-     height: 34px;
-     padding: 6px 12px;
-     font-size: 14px;
-     line-height: 1.428571429;
-     color: #555555;
-     background-color: #fff;
-     background-image: none;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-     display: block;
-     margin-right: auto;
-     margin-left: auto;
-     text-align: center;
-}
- .name-label {
-     color: #63787b;
-     font-size: 20px;
-     letter-spacing: .1px;
-     line-height: 140%;
-     margin: 0;
-     margin-top: 20px;
-     margin-bottom: 7px;
-     text-transform: uppercase;
-}
- .name-button {
-     width: 41%;
-     color: black;
-     background-color: #337ab7;
-     border-color: #2e6da4;
-     text-transform: uppercase;
-     display: inline-block;
-     margin-bottom: 0;
-     font-weight: normal;
-     text-align: center;
-     white-space: nowrap;
-     vertical-align: middle;
-     touch-action: manipulation;
-     cursor: pointer;
-     background-image: none;
-     border: 1px solid transparent;
-     padding: 6px 12px;
-     font-size: 14px;
-     line-height: 1.428571429;
-     border-radius: 4px;
-     user-select: none;
-}
- .create-banner {
-     background-repeat: no-repeat;
-     background-position: center center;
-     background-size: cover;
-     padding: 191px 0px 0px 0px;
-     position: relative;
-     overflow: hidden;
-}
- .create-image1 {
-     background-image: url(cover.webp);
-}
- .create-image2 {
-     padding-top: 121px;
-     background-image: url(nicola-fioravanti.jpg);
-}
- .create-image3 {
-     background-image: url(tina-witherspoon.jpg);
-}
- .create-image4 {
-     background-image: url(wave_candle.jpg);
-}
- .ok {
-     padding-top: 500px;
-}
- header {
-     bottom: 899px;
-}
- .datetime select:nth-child(1) {
-     width: 70px;
-     text-indent: 15px;
-}
- .datetime select:nth-child(2) {
-     width: 55px;
-}
- .datetime select:nth-child(3) {
-     width: 130px;
-}
- .datetime select:nth-child(4) {
-     width: 55px;
-}
- .datetime lable:nth-child(5) {
-     width: 20px;
-     text-indent: 15px;
-}
- .datetime input:nth-child(6) {
-     width: 180px;
-     text-indent: 15px;
-}
- #q {
-     margin-left: 20px;
-}
- h {
-     margin-top: 3px;
-}
- .navbar {
-     margin-bottom: 20px;
-}
- .show-banner {
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-image: url(cloud.jpeg);
-     padding: 100px 0px 80px 0px;
-     position: relative;
-     overflow: hidden;
-}
- .show-banner .top-text {
-     text-align: center;
-}
- .show-banner .top-text h6 {
-     color: #fff;
-     font-size: 15px;
-     font-weight: 500;
-     text-transform: uppercase;
-}
- .show-banner .top-text h2 {
-     color: #30442c;
-     font-size: 53px;
-     letter-spacing: 0;
-     font-weight: 400;
-     line-height: 1.15em;
-}
- .show-banner ul.categories {
-     width: 100%;
-     margin-top: 60px;
-     text-align: center;
-}
- .show-banner ul.categories li {
-     display: inline-block;
-     text-align: center;
-     width: 18%;
-}
- .show-banner ul.categories li a {
-     color: #fff;
-     text-align: center;
-     font-size: 15px;
-     margin-top: 15px;
-}
- .show-banner ul.categories li .icon {
-     display: block;
-     margin: 0 auto 12px auto;
-     width: 66px;
-     height: 66px;
-     border-radius: 50%;
-     text-align: center;
-     line-height: 62px;
-     color: #8d99af;
-     background-color: #fff;
-     transition: all .5s;
-}
- .show-banner ul.categories li a:hover .icon {
-     background-color: #2b2d42;
-}
- .show-banner ul.categories li .icon img {
-     max-width: 27px;
-}
- .about {
-     color: #c7c5c8;
-     margin-bottom: 0px;
-     font-size: 240%;
-     text-align: left;
-}
- #menu_memorial {
-     background-color: #F5DDC4;
-}
- #menu_memorial .menu-wrapper {
-     max-width: 1120px;
-     padding: 0 8px;
-     margin: 0 auto;
-     box-sizing: border-box;
-}
- #menu_memorial .menu-wrapper>ul, #menu_memorial_mobile .menu-wrapper>ul {
-     background-color: #F5DDC4;
-     position: relative;
-     padding-top: 5px;
-     padding-bottom: 5px;
-     padding-left: 0px;
-}
- #menu_memorial .menu-wrapper>ul>li, #menu_memorial_mobile .menu-wrapper>ul>li {
-     display: inline;
-}
- #menu_memorial .menu-wrapper>ul>li>a, #menu_memorial_mobile .menu-wrapper>ul>li>a {
-     padding-left: 30px;
-     padding-right: 60px;
-     color: #32150a;
-     font-size: 150%;
-}
- aside section span {
-     display: block;
-     margin-bottom: 3px;
-     line-height: 1;
-     padding-left: 30px;
-}
- #memorial_privacy_type {
-     text-align: center;
-     font-size: 150%;
-}
- .phrase{
-     font-family: 'Sriracha', cursive;
-}
- .tribute-title{
-     font-family: 'Montserrat Alternates', sans-serif;
-     margin-top: 70px;
-     text-align: left;
-     font-size: 216%;
-}
- .tribute{
-     --animate-duration: 1s;
-     --animate-delay: 1s;
-     --animate-repeat: 1;
-     text-shadow: 1px 1px 1px rgba(255,255,255,.33);
-     margin: 0;
-     font: inherit;
-     font-size: 100%;
-     vertical-align: baseline;
-     -webkit-text-size-adjust: none;
-     border-radius: 6px;
-     padding: 1em;
-     background-color: #fce7d2;
-     border: 1px solid #e8d3be;
-     color: #3c1f1d;
-     margin-bottom: 15px;
-}
- #contribution_tribute_attributes_eulogy{
-     height: 129px;
-}
- .button_create{
-     width: 20%;
-     float: right;
-}
- .eulogy {
-     color: #30442c;
-     margin-bottom: 30px;
-     font-size: 120%;
-     text-align: left;
-}
- .form_tribute{
-     position: relative;
-}
- .author{
-     position: absolute;
-     right: -73rem;
-     color: #30442c;
-}
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(candle.jpg);
+    padding: 500px 0px 180px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-banner .top-text {
+    text-align: center;
+}
+
+.main-banner .top-text h6 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.main-banner .top-text h2 {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-top: 15px;
+    margin-bottom: 45px;
+}
+
+.main-banner ul.categories {
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.main-banner ul.categories li {
+    display: inline-block;
+    text-align: center;
+    width: 18%;
+}
+
+.main-banner ul.categories li a {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.main-banner ul.categories li .icon {
+    display: block;
+    margin: 0 auto 12px auto;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 62px;
+    color: #8d99af;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+.main-banner ul.categories li a:hover .icon {
+    background-color: #2b2d42;
+}
+
+.main-banner ul.categories li .icon img {
+    max-width: 27px;
+}
+
+.title {
+    color: #c7c5c8;
+    margin-bottom: 30px;
+    font-size: 300%;
+}
+
+.heading {
+    color: #c7c5c8;
+    margin-bottom: 30px;
+    font-size: 170%;
+}
+
+.black {
+    background-color: #2a2727;
+}
+
+.quoteText {
+    color: #c7c5c8;
+    text-indent: 250px;
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 130%;
+    padding: 0px 5px 10px 0px;
+    line-height: 21px
+}
+
+.authorOrTitle {
+    color: #c7c5c8;
+    float: right;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: bold
+}
+
+.indent {
+    text-indent: 50px;
+    color: #c7c5c8;
+    margin-bottom: 30px;
+    font-size: 150%;
+}
+
+label {
+    color: white;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.gravatar {
+    width: 80px;
+    height: 80px;
+}
+
+.create-memorial {
+    background: #cccccc;
+    margin-top: 20px;
+    border: 1px solid #c39c65;
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #1b4046;
+    padding: 48px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.form-title {
+    color: #1b4046;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+    margin: 4px 0 18px;
+    text-align: center;
+}
+
+.title-help-text {
+    color: #63787b;
+    font-size: 20px;
+    letter-spacing: .1px;
+    line-height: 140%;
+    margin: 0;
+    text-transform: uppercase
+}
+
+.name-input {
+    width: 30%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.name-label {
+    color: #63787b;
+    font-size: 20px;
+    letter-spacing: .1px;
+    line-height: 140%;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
+
+.name-button {
+    width: 41%;
+    color: black;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.create-banner {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 191px 0px 0px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.create-image1 {
+    background-image: url(cover.webp);
+}
+
+.create-image2 {
+    padding-top: 121px;
+    background-image: url(nicola-fioravanti.jpg);
+}
+
+.create-image3 {
+    background-image: url(tina-witherspoon.jpg);
+}
+
+.create-image4 {
+    background-image: url(wave_candle.jpg);
+}
+
+.ok {
+    padding-top: 500px;
+}
+
+header {
+    bottom: 899px;
+}
+
+.datetime select:nth-child(1) {
+    width: 70px;
+    text-indent: 15px;
+}
+
+.datetime select:nth-child(2) {
+    width: 55px;
+}
+
+.datetime select:nth-child(3) {
+    width: 130px;
+}
+
+.datetime select:nth-child(4) {
+    width: 55px;
+}
+
+.datetime lable:nth-child(5) {
+    width: 20px;
+    text-indent: 15px;
+}
+
+.datetime input:nth-child(6) {
+    width: 180px;
+    text-indent: 15px;
+}
+
+#q {
+    margin-left: 20px;
+}
+
+h {
+    margin-top: 3px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.show-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(cloud.jpeg);
+    padding: 100px 0px 80px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.show-banner .top-text {
+    text-align: center;
+}
+
+.show-banner .top-text h6 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.show-banner .top-text h2 {
+    color: #30442c;
+    font-size: 53px;
+    letter-spacing: 0;
+    font-weight: 400;
+    line-height: 1.15em;
+}
+
+.show-banner ul.categories {
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.show-banner ul.categories li {
+    display: inline-block;
+    text-align: center;
+    width: 18%;
+}
+
+.show-banner ul.categories li a {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.show-banner ul.categories li .icon {
+    display: block;
+    margin: 0 auto 12px auto;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 62px;
+    color: #8d99af;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+.show-banner ul.categories li a:hover .icon {
+    background-color: #2b2d42;
+}
+
+.show-banner ul.categories li .icon img {
+    max-width: 27px;
+}
+
+.about {
+    color: #c7c5c8;
+    margin-bottom: 0px;
+    font-size: 240%;
+    text-align: left;
+}
+
+#menu_memorial {
+    background-color: #F5DDC4;
+}
+
+#menu_memorial .menu-wrapper {
+    max-width: 1120px;
+    padding: 0 8px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#menu_memorial .menu-wrapper>ul,
+#menu_memorial_mobile .menu-wrapper>ul {
+    background-color: #F5DDC4;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+}
+
+#menu_memorial .menu-wrapper>ul>li,
+#menu_memorial_mobile .menu-wrapper>ul>li {
+    display: inline;
+}
+
+#menu_memorial .menu-wrapper>ul>li>a,
+#menu_memorial_mobile .menu-wrapper>ul>li>a {
+    padding-left: 30px;
+    padding-right: 60px;
+    color: #32150a;
+    font-size: 150%;
+}
+
+aside section span {
+    display: block;
+    margin-bottom: 3px;
+    line-height: 1;
+    padding-left: 30px;
+}
+
+#memorial_privacy_type {
+    text-align: center;
+    font-size: 150%;
+}
+
+.phrase {
+    font-family: 'Sriracha', cursive;
+}
+
+.tribute-title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin-top: 70px;
+    text-align: left;
+    font-size: 216%;
+}
+
+.tribute {
+    --animate-duration: 1s;
+    --animate-delay: 1s;
+    --animate-repeat: 1;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .33);
+    margin: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    -webkit-text-size-adjust: none;
+    border-radius: 6px;
+    padding: 1em;
+    background-color: #fce7d2;
+    border: 1px solid #e8d3be;
+    color: #3c1f1d;
+    margin-bottom: 30px;
+}
+
+#contribution_tribute_attributes_eulogy {
+    height: 129px;
+}
+
+.button_create {
+    width: 20%;
+    float: right;
+}
+
+.eulogy {
+    text-indent: 40px;
+    color: #30442c;
+    font-size: 120%;
+    text-align: left;
+}
+
+.form_tribute {
+    position: relative;
+}
+
+.author {
+    right: -73rem;
+    color: #30442c;
+    padding-left: 950px;
+    padding-bottom: 0px;
+}
+
+.edit_delete {
+    padding-right: 10px;
+    color: #30442c;
+}
+
+.delete_tribute {
+    position: absolute;
+    right: 36rem;
+    color: #30442c;
+}
+
+.edit_tribute {
+    position: absolute;
+    right: 40rem color: #30442c;
+    margin-left: 950px;
+}
+
