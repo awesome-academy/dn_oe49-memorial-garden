@@ -21,6 +21,7 @@ class Memorial < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.length.digit_50}
   validates :relationship, presence: true
+  validates :biography, length: {maximum: Settings.length.digit_1000}
 
   def placetimes_attributes= placetimes_attributes
     placetimes_attributes.each do |num, params|

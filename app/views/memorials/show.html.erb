@@ -6,7 +6,7 @@
   <aside>
     <section class="user_info">
       <h1>
-       <span class = "" >
+       <span>
         <%= t("placetime.born_on") %>
         <%= show_date_of @memorial, :birth %>
         <%= t "placetime.at" %>
@@ -26,8 +26,9 @@
 <div id="tribute_form">
   <%= render (logged_in?  ? "shared/user_tribute" : "shared/tribute_signup") %>
 </div>
-<ol class="memorials">
+<ol class="memorials", id="tributes">
   <%= render @tributes %>
 </ol>
-<%= paginate @tributes %>
-
+<div id="paginator">
+<%= paginate @tributes, remote: true  %>
+</div>

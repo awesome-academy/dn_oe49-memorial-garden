@@ -9,9 +9,9 @@ class CreateMemorials < ActiveRecord::Migration[6.1]
       t.string :avatar
       t.string :relationship, null: false
       t.integer :privacy_type, null: false, default: 0
+      t.string :biography
 
       t.timestamps
     end
   end
 end
-

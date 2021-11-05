@@ -18,7 +18,8 @@
         <%= link_to t("memorial.show.about"), @memorial %>
       </li>
       <li>
-        <%= link_to t("memorial.biography.title"), "#" %>
+        <%= link_to t("memorial.biography.title"),
+          [:show_biography, @memorial]%>
       </li>
       <li>
         <%= link_to t("memorial.stories.title"), "#" %>
