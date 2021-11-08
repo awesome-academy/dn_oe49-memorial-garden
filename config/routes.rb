@@ -7,8 +7,11 @@ Rails.application.routes.draw do
       resources :memorials, only: :index
     end
     resources :memorials, only: %i(index show new create) do
-      match "privacy_settings", on: :member, via: [:get, :patch]
-      get "/search_unshared_member", to: "memorials#search_unshared_member"
+      member do
+        match "privacy_settings", via: [:get, :patch]
+        get "search_unshared_member"
+        get "show_biography"
+      end
       resources :contributions, only: %i(create edit update destroy)
     end
     get "/login", to: "sessions#new"

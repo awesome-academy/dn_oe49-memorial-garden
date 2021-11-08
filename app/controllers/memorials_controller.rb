@@ -5,11 +5,12 @@ class MemorialsController < ApplicationController
   end
   before_action :logged_in_user, only: %i(new create privacy_settings
                                           search_unshared_member)
-  before_action ->{load :memorial, :id}, only: %i(show privacy_settings)
-  before_action ->{load :memorial, :memorial_id}, only: :search_unshared_member
-  before_action :check_authorize_access, only: :show
-  before_action ->{correct_user @memorial.user}, only: %i(privacy_settings
-    search_unshared_member)
+  before_action ->{load :memorial, :id},
+                only: %i(show privacy_settings
+                         search_unshared_member show_biography)
+  before_action :check_authorize_access, only: %i(show show_biography)
+  before_action ->{correct_user @memorial.user},
+                only: %i(privacy_settings search_unshared_member)
 
   def index
     @memorials = Memorial.includes(:placetimes).type_of_index(@user)
@@ -71,6 +72,8 @@ class MemorialsController < ApplicationController
       format.json {}
     end
   end
+
+  def show_biography; end
 
   private
 
