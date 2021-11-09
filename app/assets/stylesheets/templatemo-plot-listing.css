@@ -6,6 +6,7 @@
      padding: 500px 0px 180px 0px;
      position: relative;
      overflow: hidden;
+     padding-bottom: 205px;
 }
  .main-banner .top-text {
      text-align: center;
@@ -70,6 +71,7 @@
 }
  .black {
      background-color: #2a2727;
+     background-image: url(1957147.jpg);
 }
  .quoteText {
      color: #c7c5c8;
@@ -103,9 +105,10 @@
      height: 80px;
 }
  .create-memorial {
-     background: #cccccc;
+     background-color: transparent;
      margin-top: 20px;
-     border: 1px solid #c39c65;
+     margin-top: 227px;
+     margin-bottom: 318px;
      border-radius: 16px;
      box-sizing: border-box;
      color: #1b4046;
@@ -399,4 +402,18 @@
 }
  .biography_title {
      font-size: 210% ;
+}
+ a {
+     color: orange;
+     text-decoration: none;
+}
+ .title_space{
+     margin-top: 52px;
+}
+ .indent_content{
+     padding-left: 180px;
+}
+ .indent_title{
+     margin-right: 161px;
+     margin-bottom: 50px;
 }

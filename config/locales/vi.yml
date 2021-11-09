@@ -95,7 +95,7 @@ vi:
         avatar: "Ảnh"
         gender: "Giới tính"
         cause_of_death: "Qua đời bởi"
-        relationship: "Họ là gì của bạn"
+        relationship: "Quan hệ của bạn và họ"
       contribution/tribute:
         eulogy: "Lời chào tạm biệt"
       contribution:
@@ -113,7 +113,7 @@ vi:
             name:
               blank: "chưa được điền."
             relationship:
-              blank: "nào ?"
+              blank: "vẫn chưa được điền?"
         tribute:
           blank: "chưa được điền"
         contribution:

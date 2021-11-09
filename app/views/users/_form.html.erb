@@ -1,5 +1,7 @@
-<%= form_for(@user) do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
+<%= form_for(@user, remote: true) do |f| %>
+  <div id="error">
+    <%= render "shared/error_messages", object: f.object %>
+  </div>
   <%= f.label User.human_attribute_name(:avatar) %>
   <div class="gravatar_edit">
     <%= avatar_for @user %>

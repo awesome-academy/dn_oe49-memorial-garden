@@ -18,20 +18,26 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash.now[:danger] = t("flash.signup.failed")
-      render :new
+      respond_to do |format|
+        format.js{render :error}
+      end
     end
   end
 
   def edit; end
 
   def update
-    @user.avatar.attach(params[:user][:avatar])
+    avatar = params[:user][:avatar]
+    @user.avatar.attach(avatar) if avatar.present?
     if @user.update(user_params)
       flash[:success] = t("flash.update.successed")
       redirect_to @user
     else
       flash.now[:danger] = t("flash.update.failed")
-      render :edit
+      respond_to do |format|
+        format.html{render :edit}
+        format.js{render :error}
+      end
     end
   end
 

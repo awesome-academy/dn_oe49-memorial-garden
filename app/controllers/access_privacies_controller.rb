@@ -26,10 +26,12 @@ class AccessPrivaciesController < ApplicationController
   end
 
   def implement action
+    @members = @memorial.shared_users
     @memorial.send(action.to_s, @user)
-    flash[:success] = t("flash.#{action}.successed")
+    flash.now[:success] = t("flash.#{action}.successed")
     respond_to do |format|
-      format.html{redirect_to request.referer}
+      format.html{render "memorials/privacy_settings"}
+      format.js
     end
   end
 

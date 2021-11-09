@@ -1,5 +1,7 @@
-<%= form_with model: @memorial, url: memorials_path do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
+<%= form_with model: @memorial, url: memorials_path, local: false do |f| %>
+  <div id="error">
+    <%= render "shared/error_messages", object: f.object %>
+  </div>
   <%= f.label Memorial.human_attribute_name(:avatar) %>
   <div class="gravatar_edit">
     <%= avatar_for @memorial %>

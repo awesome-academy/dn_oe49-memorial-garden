@@ -1,0 +1,8 @@
+window.location.reload();
+$("#flash").html('<%= j render partial: "shared/flash" %>');
+$('#privacy_option').html('<%= j render "privacy_form" %>');
+<% if @memorial.privacy_type_shared? %>
+  $('#shared_form').html('<%= j render "shared_list" %>');
+<% else %>
+  $('#shared_list').remove();
+<% end %>

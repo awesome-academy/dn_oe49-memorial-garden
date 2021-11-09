@@ -44,7 +44,7 @@ class Memorial < ApplicationRecord
   end
 
   def date type
-    placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?).pop.date
+    placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?).pop&.date
   end
 
   def year type
@@ -56,7 +56,7 @@ class Memorial < ApplicationRecord
 
   def place type
     placetimes.send(type.eql?(:birth) ? :select : :reject, &:is_born?)
-              .pop.location
+              .pop&.location
   end
 
   def share user

@@ -1,28 +1,9 @@
 <% provide :title, t("memorial.profile") %>
-<%= form_with(model: @memorial, id: "memorial-settings", url: privacy_settings_memorial_path(@memorial), local: false) do |f| %>
-  <h1> <%= User.human_attribute_name(:privacy_type) %> </h1>
-  <%= f.select :privacy_type, options_for_select([[t("memorial.privacy.public"),
-    :public], [t("memorial.privacy.private"), :private],
-    [t("memorial.privacy.shared"), :shared]], @memorial.privacy_type) %>
-  <%= f.submit t("edit.button"), class: "btn btn-primary" %>
-<% end %>
-
-<% if @memorial.privacy_type_shared? %>
-  <h3><%= t("memorial.privacy.shared_people") %></h3>
-  <%= form_with model: @memorial.user_relations.build, remote: true,
-                html: { class: "form-inline" } do |form| %>
-    <div><%= hidden_field_tag :memorial_id, @memorial.id %></div>
-    <div class="row form-group">
-      <div class="col-sm-8">
-        <%= form.text_field :query, value: params[:query],
-          placeholder: t("memorial.privacy.add_infor"), size: 40, data:
-          {behavior: "autocomplete"}, class: "form-control" %>
-      </div>
-      <div class="col-sm-4">
-        <%= form.button t("memorial.privacy.add"),
-          class: "btn btn-outline-success form-control" %>
-      </div>
-    </div>
+<div id= "privacy_option">
+  <%= render "privacy_form" %>
+</div>
+<div id= "shared_form">
+  <% if @memorial.privacy_type_shared? %>
+      <%= render "shared_list" %>
   <% end %>
-  <%= render @members, :fbookupload => "yes" %>
-<% end %>
+</div>
