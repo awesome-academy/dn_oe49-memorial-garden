@@ -1,0 +1,18 @@
+<div class="card card_flower">
+  <b class="message">
+      <%= link_to flower.belongs_user.name,
+        flower.belongs_user, class: "name_1" %>
+      <%= t("flower.send") %>
+  </b>
+  <br>
+  <%= image_for flower %>
+  <div class="card-body">
+    <h5 class="card-title">
+      <b class="name_1"><%= flower.flower_detail.translated_name %></b>
+      <% if flower.message.present? %>
+        <span class="message"><%= t("flower.with_message") %></span>
+          <span class="message"><p class="flow_message"><%= flower.message %></p> </span>
+      <% end %>
+    </h5>
+  </div>
+</div>

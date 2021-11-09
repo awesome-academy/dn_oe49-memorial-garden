@@ -19,7 +19,7 @@ user = User.create!(name: "Thanh Le",
                              location: birth_place, is_born: 1)
   memorial.placetimes.create(date: death_date,
                              location: death_place, is_born: 0)
-  memorial.contributions.create(user_id: user.id, relationship: relationship, contribution_type: 0, tribute_attributes: {eulogy: 'hihi'})
+  memorial.contributions.create(user_id: user.id, relationship: relationship, contribution_type: 0, tribute_attributes: {eulogy: 'goodbye'})
 end
 5.times do |n|
   user_name = Faker::Name.name
@@ -44,8 +44,24 @@ end
                                location: birth_place, is_born: 1)
     memorial.placetimes.create(date: death_date,
                                location: death_place, is_born: 0)
+    # memorial.avatar.attach(io: File.open(Rails.root.join('../Pictures/yen.jpg')),
+    #               filename: 'yen.jpg')
   end
 end
+
+  # p name
+  # convention_name = name.split(" ")
+  # p convention_name
+flower_paths = Dir["../Pictures/flower/*"]
+flower_paths.each do |image_path|
+  image_name = image_path[(/[\w-]+\.jpg/)]
+  name = image_path[(/[\w-]+\.jpg/)].gsub('.jpg', '')
+                                    .split(/(?=[A-Z])/).join('_').downcase
+  flower = FlowerDetail.create(name: name)
+  flower.image.attach(io: File.open(Rails.root.join("#{image_path}")),
+                  filename: image_path)
+end
+
 users = User.all
 memorials = Memorial.all
 memorials.each do |memorial|
@@ -53,5 +69,8 @@ memorials.each do |memorial|
   users.each do |user|
     eulogy = Faker::Quotes::Shakespeare.as_you_like_it_quote
     memorial.contributions.create(user_id: user.id, contribution_type: :tribute, tribute_attributes: {eulogy: eulogy})
+    memorial.contributions.create(user_id: user.id,
+      contribution_type: :flower, flower_attributes: {flower_detail_id:
+        (1..FlowerDetail.all.count).to_a.sample, message: eulogy})
   end
 end

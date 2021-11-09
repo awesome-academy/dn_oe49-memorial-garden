@@ -1,0 +1,2 @@
+$('#flower_list').html('<%= j render @flowers %>');
+$("#paginator").html("<%= j paginate(@flowers, remote: true) %>");

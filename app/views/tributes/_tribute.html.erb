@@ -1,26 +1,36 @@
 <div class="tribute rounded-box tribute_form">
-  <div class="row">
-    <aside >
-      <section class="user_info">
-        <h1>
-          <span><p class="eulogy"><%= tribute.eulogy %></p></span>
-          <span class="author"><%= link_to tribute.belongs_user.name,
-            tribute.belongs_user %></span>
-          <% if authorize_tribute_modifier(tribute) %>
-            <footer style="margin-top: -5px;" >
-              <nav>
-                <ul class = "edit_delete">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-5">
+        <i class="fas fa-hanukiah"></i>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= link_to tribute.belongs_user.name, tribute.belongs_user %>
+          </h4>
+          <p class="eulogy"><%= tribute.eulogy %> </p>
+          <footer>
+            <nav>
+              <ul class="edit_delete">
+                <% if authorize_tribute_modifier(tribute) %>
                   <li><%= link_to t("header.edit"),
-                    [:edit,@memorial, tribute.contribution], remote: true  %></li>
+                      [:edit,@memorial, tribute.contribution], remote: true  %>
+                  </li>
+                <% end %>
+                <% if authorize_tribute_modifier(tribute) ||
+                  authorize_owner(tribute) %>
                   <li><%= link_to t("header.delete"), [@memorial,
-                    tribute.contribution], method: :delete, remote: true,
-                    data: {confirm: t("delete.confirm")} %></li>
-                </ul>
-              </nav>
-            </footer>
-          <% end %>
-        </h1>
-      </section>
-    </aside>
+                      tribute.contribution], method: :delete, remote: true,
+                      data: {confirm: t("delete.confirm")} %>
+                  </li>
+                <% end %>
+              </ul>
+            </nav>
+          </footer>
+          <%= t "time.posted", count: time_ago_in_words(tribute.created_at) %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         get "show_biography"
       end
       resources :contributions, only: %i(create edit update destroy)
+      resources :flowers, only: :index
     end
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"

@@ -2,6 +2,7 @@ vi:
   time:
     formats:
       default: "%d-%m-%Y"
+    posted: "Đã đăng %{count} trước."
   day: "Ngày"
   month: "Tháng"
   year: "Năm"
@@ -56,6 +57,7 @@ vi:
       signup: "Đăng nhập để gửi lời chào tạm biệt"
       tribute_ph: "Điền vào đây"
       button: "Lưu"
+      flower: "Đến đặt hoa"
     privacy:
       title: "Chế độ riêng tư"
       public: "Công khai"
@@ -100,6 +102,8 @@ vi:
         eulogy: "Lời chào tạm biệt"
       contribution:
         contribution_type: "Lời tiễn biệt"
+      flower:
+        message: "Lời nhắn"
     errors:
       models:
         user:
@@ -186,3 +190,26 @@ vi:
     destroy:
       successed: "Xóa thành công"
       failed: "Xóa chưa thành công"
+  flower_name:
+    white_lily: "Loa kèn trắng"
+    lavender_rose: "Hoa hồng bụi"
+    independence_poppy: "Hoa anh túc"
+    harvest_daisy: "Hoa cúc"
+    yellow_blue_white_lily: "Loa kèn xanh vàng trắng"
+    farmhouse_sunflower: "Hoa hướng dương"
+    red_rose: "Hoa hồng "
+    poinsettia: "Hoa trạng nguyên"
+    calla_lily_rose: "Hoa vân môn"
+    patriotic: "Hoa ái quốc"
+    peony_rose: "Hoa mẫu đơn"
+    yellow_rose: "Hoa hồng vàng"
+    red_rosebud_lily: "Loa kèn, Hồng nụ đỏ"
+  flower:
+    send: "đã gửi:"
+    with_message: " với lời nhắn:"
+    input: "Chọn loại hoa"
+    create:
+      successed: "Gửi hoa thành công"
+      failed: "Gửi hoa không thành công"
+    title: "Hoa thơm tặng "
+    message: "Kèm lời nhắn tại đây"

@@ -73,13 +73,22 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
     t.index ["user_id"], name: "index_contributions_on_user_id"
   end
 
+  create_table "flower_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image"
+    t.string "meaning"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "flowers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "contribution_id", null: false
-    t.integer "type", default: 0, null: false
+    t.bigint "flower_detail_id", null: false
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["contribution_id"], name: "index_flowers_on_contribution_id"
+    t.index ["flower_detail_id"], name: "index_flowers_on_flower_detail_id"
   end
 
   create_table "memorials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -150,6 +159,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_071540) do
   add_foreign_key "contributions", "memorials"
   add_foreign_key "contributions", "users"
   add_foreign_key "flowers", "contributions"
+  add_foreign_key "flowers", "flower_details"
   add_foreign_key "memorials", "users"
   add_foreign_key "placetimes", "memorials"
   add_foreign_key "stories", "contributions"
