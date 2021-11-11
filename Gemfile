@@ -21,10 +21,12 @@ gem "webpacker", "~> 5.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "rspec-rails", "~> 4.0.1"
+  gem "rspec-rails", "~> 5.0.0"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "simplecov-rcov"
+  gem "simplecov"
 end
 
 group :development do
