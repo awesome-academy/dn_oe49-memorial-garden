@@ -129,7 +129,7 @@ vi:
     signup: "Tạo tại khoản"
 
   flash:
-    signup:
+    create:
       failed: "Đăng ký chưa thành công, sửa lại form theo hướng dẫn giúp mình nhé!"
       successed: "Chào mừng tân binh hen ~~"
     show:

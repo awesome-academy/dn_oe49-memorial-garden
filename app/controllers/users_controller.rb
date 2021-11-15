@@ -10,15 +10,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @user.avatar.attach(params[:user][:avatar])
+    build_user_through_params
     if @user.save
       log_in @user
-      flash[:success] = t("flash.signup.successed")
+      flash[:success] = t("flash.create.successed")
       redirect_to @user
     else
-      flash.now[:danger] = t("flash.signup.failed")
+      flash.now[:danger] = t("flash.create.failed")
       respond_to do |format|
+        format.html{render :new}
         format.js{render :error}
       end
     end
@@ -42,6 +42,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def build_user_through_params
+    @user = User.new(user_params)
+    avatar = params[:user][:avatar]
+    @user.avatar.attach(avatar) if avatar.present?
+  end
 
   def user_params
     params.require(:user).permit(User::ATR_PERMIT)

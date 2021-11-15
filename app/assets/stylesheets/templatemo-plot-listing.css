@@ -397,7 +397,8 @@
 }
  .edit_tribute {
      position: absolute;
-     right: 40rem color: #30442c;
+     right: 40rem;
+     color: #30442c;
      margin-left: 950px;
 }
  .biography_title {
