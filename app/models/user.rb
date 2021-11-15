@@ -24,11 +24,6 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def leave_a_tribute memorial, eulogy, relationship = nil
-    contributions.create(memorial_id: memorial.id, relationship: relationship,
-      contribution_type: 0, tribute_attributes: {eulogy: eulogy})
-  end
-
   def wrote_tribute? memorial
     contributions.tribute.search_by_memorial(memorial).present?
   end
@@ -38,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def find_relation memorial
-    memorial_relations.select{|rela| rela.memorial_id.eql? memorial.id}
+    memorial_relations.select{|rela| rela.memorial_id.eql? memorial.id}&.pop
   end
 
   private
