@@ -54,7 +54,7 @@ node_modules/
 
 # Ignore precompiled javascript packs
 /public/packs
-/public/packs-test
+/public/packs-test/js
 /public/assets
 
 # Ignore yarn files

@@ -22,13 +22,14 @@ gem "webpacker", "~> 5.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
   gem "rspec-rails", "~> 5.0.0"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
-  gem "simplecov-rcov"
-  gem "simplecov"
   gem "shoulda-matchers", "~> 5.0"
+  gem "simplecov"
+  gem "simplecov-rcov"
 end
 
 group :development do
