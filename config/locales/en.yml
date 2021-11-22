@@ -42,6 +42,9 @@ en:
       button: "Continue"
       successed: "Memorial's created"
       failed: "Memorial's not created"
+    update:
+      successed: "Memorial's updated"
+      failed: "Updating memorial failed"
     new:
       button: "Create a Memorial"
     show:
@@ -98,7 +101,7 @@ en:
     }
     signup: "Create my account"
   flash:
-    signup:
+    create:
       failed: "Sign Up Failed"
       successed: "Welcome to the Sample App!"
     show:
@@ -175,3 +178,15 @@ en:
       failed: "Send flower unsuccessed"
     title: "Beautiful Flower For "
     message: "Write message in this"
+  user:
+    create:
+      failed: "Sign Up Failed"
+      successed: "Welcome to the Sample App!"
+    update:
+      successed: "Profile updated"
+      failed: "Updating profile failed"
+    delete:
+      successed: "User's deleted"
+      failed: "Unsuccessfull deletion"
+    edit:
+      wrong_user: "You can't do this action"

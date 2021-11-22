@@ -40,14 +40,16 @@ class MemorialsController < ApplicationController
   end
 
   def create
-    @memorial = current_user.memorials.build(memorial_params)
-    avatar = params[:memorial][:avatar]
-    @memorial.avatar.attach(avatar) if avatar.present?
+    build_memorial_through_params
     if @memorial.save
       flash[:success] = t("memorial.create.successed")
-      redirect_to root_url
+      redirect_to @memorial
     else
       flash.now[:danger] = t("memorial.create.failed")
+      respond_to do |format|
+        format.html{render :new}
+        format.js{render :create}
+      end
     end
   end
 
@@ -56,10 +58,11 @@ class MemorialsController < ApplicationController
                         .includes(:memorial_relations, avatar_attachment: :blob)
     return if params[:memorial].blank?
 
-    if @memorial.update(privacy_params)
-      flash.now[:success] = t("flash.update.successed")
-    else
-      flash.now[:danger] = t("flash.update.failed")
+    begin
+      @memorial.update(privacy_params)
+      flash.now[:success] = t("memorial.update.successed")
+    rescue ArgumentError
+      flash.now[:danger] = t("memorial.update.failed")
     end
     respond_to do |format|
       format.html{render "privacy_settings"}
@@ -73,7 +76,6 @@ class MemorialsController < ApplicationController
     @users_by_email = User.unshared_member(@memorial)
                           .search_by(:email, search_params)
     respond_to do |format|
-      format.html {}
       format.json {}
     end
   end
@@ -81,6 +83,12 @@ class MemorialsController < ApplicationController
   def show_biography; end
 
   private
+
+  def build_memorial_through_params
+    @memorial = current_user.memorials.build(memorial_params)
+    avatar = params[:memorial][:avatar]
+    @memorial.avatar.attach(avatar) if avatar.present?
+  end
 
   def user_mode?
     able = params[:user_id].present?
