@@ -12,7 +12,7 @@ RSpec.describe "Users", type: :request do
   end
 
   describe "GET #show" do
-    it_should_behave_like "load user for show,edit,update", :show
+    it_should_behave_like "load object in model for action",:user, :show
   end
 
   describe "POST #create" do
@@ -22,19 +22,19 @@ RSpec.describe "Users", type: :request do
         password: "foobar",
         password_confirmation: "foobar"}
     end
-    it_should_behave_like "validate user for create,update", :create
+    it_should_behave_like "validate object", :user, :create
   end
 
   describe "GET #edit" do
-    it_should_behave_like "logged in user for edit,update", :edit
-    it_should_behave_like "load user for show,edit,update", :edit
-    it_should_behave_like "authorize right owner for edit,update", :edit
+    it_should_behave_like "logged in user", :user, :edit
+    it_should_behave_like "load object in model for action",:user, :edit
+    it_should_behave_like "authorize access", :user, :edit
   end
 
-  describe "GET #update" do
-    it_should_behave_like "logged in user for edit,update", :update
-    it_should_behave_like "load user for show,edit,update", :update
-    it_should_behave_like "authorize right owner for edit,update", :update
-    it_should_behave_like "validate user for create,update", :update
+  describe "PATCH #update" do
+    it_should_behave_like "logged in user", :user, :update
+    it_should_behave_like "load object in model for action",:user, :update
+    it_should_behave_like "authorize access", :user, :update
+    it_should_behave_like "validate object", :user, :update
   end
 end

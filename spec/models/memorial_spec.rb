@@ -158,9 +158,9 @@ RSpec.describe Memorial, type: :model do
   end
 
   describe "scopes" do
-    let!(:memorial_1){create :memorial, name: "C"}
-    let!(:memorial_2){create :memorial, name: "B"}
-    let!(:memorial_3){create :memorial, name: "A"}
+    let(:memorial_1){create :memorial, name: "C"}
+    let(:memorial_2){create :memorial, name: "B"}
+    let(:memorial_3){create :memorial, name: "A"}
     context "sort by name asc" do
       it "return sorted list by asc" do
         memorial.destroy

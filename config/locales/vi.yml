@@ -47,6 +47,9 @@ vi:
       button: "Tiếp tục"
       successed: "Tạo tưởng niệm thành công"
       failed: "Tạo tưởng niệm thất bại"
+    update:
+      successed: "Cập nhật tưởng niệm thành công"
+      failed: "Cập nhật tưởng niệm thất bại"
     new:
       button: "Tạo Tưởng Nhớ"
     show:
@@ -112,6 +115,9 @@ vi:
           too_short: "đặt quá ngắn nha."
           too_long: "đặt quá dài nha."
           confirmation: "không giống với mật khẩu ở trên nha."
+          attributes:
+            name:
+              blank: "không được để trống hoặc chỉ chứa dấu cách nha."
         memorial:
           attributes:
             name:
@@ -127,7 +133,6 @@ vi:
   form:
     error: "Biểu mẫu chứa %{count} lỗi."
     signup: "Tạo tại khoản"
-
   flash:
     create:
       failed: "Đăng ký chưa thành công, sửa lại form theo hướng dẫn giúp mình nhé!"
@@ -213,3 +218,15 @@ vi:
       failed: "Gửi hoa không thành công"
     title: "Hoa thơm tặng "
     message: "Kèm lời nhắn tại đây"
+  user:
+    create:
+      failed: "Đăng ký chưa thành công, sửa lại form theo hướng dẫn giúp mình nhé!"
+      successed: "Chào mừng tân binh hen ~~"
+    update:
+      successed: "Cập nhật tài khoản thành công"
+      failed: "Cập nhật tài khoản thất bại"
+    delete:
+      successed: "Tài khoản đã được xóa"
+      failed: "Xóa không thành công"
+    edit:
+      wrong_user: "Bạn không có quyền truy cập chức năng này"

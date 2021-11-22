@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     build_user_through_params
     if @user.save
       log_in @user
-      flash[:success] = t("flash.create.successed")
+      flash[:success] = t("user.create.successed")
       redirect_to @user
     else
-      flash.now[:danger] = t("flash.create.failed")
+      flash.now[:danger] = t("user.create.failed")
       respond_to do |format|
         format.html{render :new}
         format.js{render :error}
@@ -30,10 +30,10 @@ class UsersController < ApplicationController
     avatar = params[:user][:avatar]
     @user.avatar.attach(avatar) if avatar.present?
     if @user.update(user_params)
-      flash[:success] = t("flash.update.successed")
+      flash[:success] = t("user.update.successed")
       redirect_to @user
     else
-      flash.now[:danger] = t("flash.update.failed")
+      flash.now[:danger] = t("user.update.failed")
       respond_to do |format|
         format.html{render :edit}
         format.js{render :error}
